@@ -255,22 +255,22 @@
       "seed": 7,
       "purpose": "Does an aerial request help when the lead car brakes, compared with ordinary braking?",
       "response": "Assess aerial assistance",
-      "decision": "Do not treat this outcome as safe",
+      "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": null,
-        "progress": 148.24249999999992,
-        "failed": true,
+        "arrival": 22.76,
+        "progress": 615.5600000000104,
+        "failed": false,
         "recoveryFailures": 0,
-        "denials": 1,
+        "denials": 0,
         "hardBrakes": 2,
-        "overlaps": 1,
-        "airUsed": 0,
-        "impulseUsed": 0,
-        "remainingImpulse": 125000,
-        "remainingAir": 10,
+        "overlaps": 0,
+        "airUsed": 3.2000000000000024,
+        "impulseUsed": 59643.68671874986,
+        "remainingImpulse": 65356.313281250186,
+        "remainingAir": 6.800000000000068,
         "backgroundDistance": 8548.553087801673,
-        "classification": "Failed occupied-volume run"
+        "classification": "Synthetic translational comparison; safety unresolved"
       },
       "events": [
         {
@@ -295,25 +295,30 @@
         },
         {
           "t": 5.36,
-          "type": "denied",
-          "message": "emergency: Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+          "type": "approved",
+          "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 7.64,
-          "type": "failure",
-          "message": "Occupied-volume contact with LEAD; no traffic was cleared."
+          "t": 8.56,
+          "type": "landed",
+          "message": "Nominal vertical touchdown reached; forward speed is continuous."
+        },
+        {
+          "t": 22.76,
+          "type": "destination",
+          "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
           "t": 5.36,
           "kind": "emergency",
-          "accepted": false,
-          "impulse": 74555.85750000003,
-          "duration": 4,
+          "accepted": true,
+          "impulse": 59644.521679687336,
+          "duration": 3.2,
           "request": {
             "speed": 22,
-            "duration": 4,
+            "duration": 3.2,
             "height": 3,
             "lateral": 0
           },
@@ -332,24 +337,20 @@
             "mode": "ground"
           },
           "reasons": [
-            "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+            "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.36,
-            "x": 205.47999999999962,
+            "t": 8.56,
+            "x": 187.8799999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
           "trafficScreen": {
-            "ok": false,
-            "reason": "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).",
+            "ok": true,
+            "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.4080187500000012,
-            "firstConflict": {
-              "t": 6.4,
-              "age": 1.0400000000000005,
-              "bottom": 1.7768524800000007
-            }
+            "minRoofClearance": 0.9426727294921879,
+            "firstConflict": null
           },
           "candidateSearch": [
             {
@@ -411,6 +412,44 @@
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 0.530578341172951,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.6612082761774127,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.7991463224817728,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": true,
+              "impulse": 59644.521679687336,
+              "clearance": 0.9426727294921879,
+              "reasons": []
             }
           ],
           "groundGap": 7.921600000000396
@@ -804,6 +843,94 @@
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 1.1292837286392805,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.9093772748056672,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.6167999999999956,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 59644.521679687336,
+              "clearance": 0.2435039794921836,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 55916.662222222236,
+              "clearance": -0.20969163851852368,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 52188.784548104995,
+              "clearance": -0.7197000000000054,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 48460.881110605376,
+              "clearance": -1.2120300829802917,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 44732.940277777816,
+              "clearance": -1.4967219907407412,
+              "reasons": [
+                "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
+                "Within-flight jerk limit exceeded.",
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
             }
           ],
           "groundGap": 20.361600000001374
@@ -832,7 +959,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 12619.030456147695,
+        "backgroundDistance": 11972.282690259064,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -878,7 +1005,7 @@
         "impulseUsed": 90741.37073260028,
         "remainingImpulse": 34258.62926739971,
         "remainingAir": 5.400000000000098,
-        "backgroundDistance": 12599.91187708559,
+        "backgroundDistance": 11986.974289824615,
         "route": "Exit 17 connector",
         "additionalGroundRouteMeters": 0,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -978,7 +1105,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11179.669819827392,
+        "backgroundDistance": 10884.720825363227,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -1024,7 +1151,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11179.669819827392,
+        "backgroundDistance": 10884.720825363227,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -1132,7 +1259,7 @@
         {
           "t": 5,
           "type": "denied",
-          "message": "Shared or directional thrust bound exceeded. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
+          "message": "Shared or directional thrust bound exceeded. Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
         }
       ],
       "requests": [
@@ -1166,6 +1293,7 @@
           },
           "reasons": [
             "Shared or directional thrust bound exceeded.",
+            "Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling.",
             "A 90° heading change requires a validated yaw/nozzle controller, absent from this model.",
             "Candidate intersects the elevated deck / its required clearance buffer before touchdown."
           ],
@@ -1429,22 +1557,22 @@
       "seed": 19,
       "purpose": "Does an aerial request help when the lead car brakes, compared with ordinary braking?",
       "response": "Assess aerial assistance",
-      "decision": "Do not treat this outcome as safe",
+      "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": null,
-        "progress": 148.24249999999992,
-        "failed": true,
+        "arrival": 22.76,
+        "progress": 615.5600000000104,
+        "failed": false,
         "recoveryFailures": 0,
-        "denials": 1,
+        "denials": 0,
         "hardBrakes": 2,
-        "overlaps": 1,
-        "airUsed": 0,
-        "impulseUsed": 0,
-        "remainingImpulse": 125000,
-        "remainingAir": 10,
+        "overlaps": 0,
+        "airUsed": 3.2000000000000024,
+        "impulseUsed": 59643.68671874986,
+        "remainingImpulse": 65356.313281250186,
+        "remainingAir": 6.800000000000068,
         "backgroundDistance": 8532.274138453417,
-        "classification": "Failed occupied-volume run"
+        "classification": "Synthetic translational comparison; safety unresolved"
       },
       "events": [
         {
@@ -1469,25 +1597,30 @@
         },
         {
           "t": 5.36,
-          "type": "denied",
-          "message": "emergency: Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+          "type": "approved",
+          "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 7.64,
-          "type": "failure",
-          "message": "Occupied-volume contact with LEAD; no traffic was cleared."
+          "t": 8.56,
+          "type": "landed",
+          "message": "Nominal vertical touchdown reached; forward speed is continuous."
+        },
+        {
+          "t": 22.76,
+          "type": "destination",
+          "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
           "t": 5.36,
           "kind": "emergency",
-          "accepted": false,
-          "impulse": 74555.85750000003,
-          "duration": 4,
+          "accepted": true,
+          "impulse": 59644.521679687336,
+          "duration": 3.2,
           "request": {
             "speed": 22,
-            "duration": 4,
+            "duration": 3.2,
             "height": 3,
             "lateral": 0
           },
@@ -1506,24 +1639,20 @@
             "mode": "ground"
           },
           "reasons": [
-            "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+            "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.36,
-            "x": 205.47999999999962,
+            "t": 8.56,
+            "x": 187.8799999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
           "trafficScreen": {
-            "ok": false,
-            "reason": "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).",
+            "ok": true,
+            "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.4080187500000012,
-            "firstConflict": {
-              "t": 6.4,
-              "age": 1.0400000000000005,
-              "bottom": 1.7768524800000007
-            }
+            "minRoofClearance": 0.9426727294921879,
+            "firstConflict": null
           },
           "candidateSearch": [
             {
@@ -1585,6 +1714,44 @@
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 0.530578341172951,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.6612082761774127,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.7991463224817728,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": true,
+              "impulse": 59644.521679687336,
+              "clearance": 0.9426727294921879,
+              "reasons": []
             }
           ],
           "groundGap": 7.921600000000396
@@ -1978,6 +2145,94 @@
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 1.1292837286392805,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.9093772748056672,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.6167999999999956,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 59644.521679687336,
+              "clearance": 0.2435039794921836,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 55916.662222222236,
+              "clearance": -0.20969163851852368,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 52188.784548104995,
+              "clearance": -0.7197000000000054,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 48460.881110605376,
+              "clearance": -1.2120300829802917,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 44732.940277777816,
+              "clearance": -1.4967219907407412,
+              "reasons": [
+                "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
+                "Within-flight jerk limit exceeded.",
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
             }
           ],
           "groundGap": 20.361600000001374
@@ -2006,7 +2261,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 12494.252604086736,
+        "backgroundDistance": 11873.83066112588,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -2052,7 +2307,7 @@
         "impulseUsed": 90741.37073260028,
         "remainingImpulse": 34258.62926739971,
         "remainingAir": 5.400000000000098,
-        "backgroundDistance": 12494.276959012861,
+        "backgroundDistance": 11891.510294015023,
         "route": "Exit 17 connector",
         "additionalGroundRouteMeters": 0,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -2151,7 +2406,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11121.982829262623,
+        "backgroundDistance": 10827.032838430849,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -2197,7 +2452,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11121.982829262623,
+        "backgroundDistance": 10827.032838430849,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -2304,7 +2559,7 @@
         {
           "t": 5,
           "type": "denied",
-          "message": "Shared or directional thrust bound exceeded. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown. Independent eastbound traffic intersects the proposed corridor."
+          "message": "Shared or directional thrust bound exceeded. Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown. Independent eastbound traffic intersects the proposed corridor."
         }
       ],
       "requests": [
@@ -2338,6 +2593,7 @@
           },
           "reasons": [
             "Shared or directional thrust bound exceeded.",
+            "Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling.",
             "A 90° heading change requires a validated yaw/nozzle controller, absent from this model.",
             "Candidate intersects the elevated deck / its required clearance buffer before touchdown.",
             "Independent eastbound traffic intersects the proposed corridor."
@@ -2602,22 +2858,22 @@
       "seed": 42,
       "purpose": "Does an aerial request help when the lead car brakes, compared with ordinary braking?",
       "response": "Assess aerial assistance",
-      "decision": "Do not treat this outcome as safe",
+      "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": null,
-        "progress": 148.24249999999992,
-        "failed": true,
+        "arrival": 22.76,
+        "progress": 615.5600000000104,
+        "failed": false,
         "recoveryFailures": 0,
-        "denials": 1,
+        "denials": 0,
         "hardBrakes": 2,
-        "overlaps": 1,
-        "airUsed": 0,
-        "impulseUsed": 0,
-        "remainingImpulse": 125000,
-        "remainingAir": 10,
+        "overlaps": 0,
+        "airUsed": 3.2000000000000024,
+        "impulseUsed": 59643.68671874986,
+        "remainingImpulse": 65356.313281250186,
+        "remainingAir": 6.800000000000068,
         "backgroundDistance": 8521.289582944475,
-        "classification": "Failed occupied-volume run"
+        "classification": "Synthetic translational comparison; safety unresolved"
       },
       "events": [
         {
@@ -2642,25 +2898,30 @@
         },
         {
           "t": 5.36,
-          "type": "denied",
-          "message": "emergency: Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+          "type": "approved",
+          "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 7.64,
-          "type": "failure",
-          "message": "Occupied-volume contact with LEAD; no traffic was cleared."
+          "t": 8.56,
+          "type": "landed",
+          "message": "Nominal vertical touchdown reached; forward speed is continuous."
+        },
+        {
+          "t": 22.76,
+          "type": "destination",
+          "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
           "t": 5.36,
           "kind": "emergency",
-          "accepted": false,
-          "impulse": 74555.85750000003,
-          "duration": 4,
+          "accepted": true,
+          "impulse": 59644.521679687336,
+          "duration": 3.2,
           "request": {
             "speed": 22,
-            "duration": 4,
+            "duration": 3.2,
             "height": 3,
             "lateral": 0
           },
@@ -2679,24 +2940,20 @@
             "mode": "ground"
           },
           "reasons": [
-            "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+            "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.36,
-            "x": 205.47999999999962,
+            "t": 8.56,
+            "x": 187.8799999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
           "trafficScreen": {
-            "ok": false,
-            "reason": "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).",
+            "ok": true,
+            "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.4080187500000012,
-            "firstConflict": {
-              "t": 6.4,
-              "age": 1.0400000000000005,
-              "bottom": 1.7768524800000007
-            }
+            "minRoofClearance": 0.9426727294921879,
+            "firstConflict": null
           },
           "candidateSearch": [
             {
@@ -2758,6 +3015,44 @@
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 0.530578341172951,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.6612082761774127,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.7991463224817728,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": true,
+              "impulse": 59644.521679687336,
+              "clearance": 0.9426727294921879,
+              "reasons": []
             }
           ],
           "groundGap": 7.921600000000396
@@ -3151,6 +3446,94 @@
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 1.1292837286392805,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.9093772748056672,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.6167999999999956,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 59644.521679687336,
+              "clearance": 0.2435039794921836,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 55916.662222222236,
+              "clearance": -0.20969163851852368,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 52188.784548104995,
+              "clearance": -0.7197000000000054,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 48460.881110605376,
+              "clearance": -1.2120300829802917,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 44732.940277777816,
+              "clearance": -1.4967219907407412,
+              "reasons": [
+                "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
+                "Within-flight jerk limit exceeded.",
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
             }
           ],
           "groundGap": 20.361600000001374
@@ -3179,7 +3562,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 12568.184077183501,
+        "backgroundDistance": 11959.635210107632,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -3225,7 +3608,7 @@
         "impulseUsed": 90741.37073260028,
         "remainingImpulse": 34258.62926739971,
         "remainingAir": 5.400000000000098,
-        "backgroundDistance": 12575.189855973375,
+        "backgroundDistance": 11979.085447391248,
         "route": "Exit 17 connector",
         "additionalGroundRouteMeters": 0,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -3325,7 +3708,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11192.237225746518,
+        "backgroundDistance": 10897.287463557961,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -3371,7 +3754,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11192.237225746518,
+        "backgroundDistance": 10897.287463557961,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -3479,7 +3862,7 @@
         {
           "t": 5,
           "type": "denied",
-          "message": "Shared or directional thrust bound exceeded. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
+          "message": "Shared or directional thrust bound exceeded. Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
         }
       ],
       "requests": [
@@ -3513,6 +3896,7 @@
           },
           "reasons": [
             "Shared or directional thrust bound exceeded.",
+            "Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling.",
             "A 90° heading change requires a validated yaw/nozzle controller, absent from this model.",
             "Candidate intersects the elevated deck / its required clearance buffer before touchdown."
           ],
@@ -3776,22 +4160,22 @@
       "seed": 101,
       "purpose": "Does an aerial request help when the lead car brakes, compared with ordinary braking?",
       "response": "Assess aerial assistance",
-      "decision": "Do not treat this outcome as safe",
+      "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": null,
-        "progress": 148.24249999999992,
-        "failed": true,
+        "arrival": 22.76,
+        "progress": 615.5600000000104,
+        "failed": false,
         "recoveryFailures": 0,
-        "denials": 1,
+        "denials": 0,
         "hardBrakes": 2,
-        "overlaps": 1,
-        "airUsed": 0,
-        "impulseUsed": 0,
-        "remainingImpulse": 125000,
-        "remainingAir": 10,
+        "overlaps": 0,
+        "airUsed": 3.2000000000000024,
+        "impulseUsed": 59643.68671874986,
+        "remainingImpulse": 65356.313281250186,
+        "remainingAir": 6.800000000000068,
         "backgroundDistance": 8608.515891812742,
-        "classification": "Failed occupied-volume run"
+        "classification": "Synthetic translational comparison; safety unresolved"
       },
       "events": [
         {
@@ -3816,25 +4200,30 @@
         },
         {
           "t": 5.36,
-          "type": "denied",
-          "message": "emergency: Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+          "type": "approved",
+          "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 7.64,
-          "type": "failure",
-          "message": "Occupied-volume contact with LEAD; no traffic was cleared."
+          "t": 8.56,
+          "type": "landed",
+          "message": "Nominal vertical touchdown reached; forward speed is continuous."
+        },
+        {
+          "t": 22.76,
+          "type": "destination",
+          "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
           "t": 5.36,
           "kind": "emergency",
-          "accepted": false,
-          "impulse": 74555.85750000003,
-          "duration": 4,
+          "accepted": true,
+          "impulse": 59644.521679687336,
+          "duration": 3.2,
           "request": {
             "speed": 22,
-            "duration": 4,
+            "duration": 3.2,
             "height": 3,
             "lateral": 0
           },
@@ -3853,24 +4242,20 @@
             "mode": "ground"
           },
           "reasons": [
-            "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+            "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.36,
-            "x": 205.47999999999962,
+            "t": 8.56,
+            "x": 187.8799999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
           "trafficScreen": {
-            "ok": false,
-            "reason": "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).",
+            "ok": true,
+            "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.4080187500000012,
-            "firstConflict": {
-              "t": 6.4,
-              "age": 1.0400000000000005,
-              "bottom": 1.7768524800000007
-            }
+            "minRoofClearance": 0.9426727294921879,
+            "firstConflict": null
           },
           "candidateSearch": [
             {
@@ -3932,6 +4317,44 @@
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 0.530578341172951,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.6612082761774127,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.7991463224817728,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": true,
+              "impulse": 59644.521679687336,
+              "clearance": 0.9426727294921879,
+              "reasons": []
             }
           ],
           "groundGap": 7.921600000000396
@@ -4325,6 +4748,94 @@
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 1.1292837286392805,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.9093772748056672,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.6167999999999956,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 59644.521679687336,
+              "clearance": 0.2435039794921836,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 55916.662222222236,
+              "clearance": -0.20969163851852368,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 52188.784548104995,
+              "clearance": -0.7197000000000054,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 48460.881110605376,
+              "clearance": -1.2120300829802917,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 44732.940277777816,
+              "clearance": -1.4967219907407412,
+              "reasons": [
+                "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
+                "Within-flight jerk limit exceeded.",
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
             }
           ],
           "groundGap": 20.361600000001374
@@ -4353,7 +4864,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 12517.605709494148,
+        "backgroundDistance": 11889.921490436529,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -4399,7 +4910,7 @@
         "impulseUsed": 90741.37073260028,
         "remainingImpulse": 34258.62926739971,
         "remainingAir": 5.400000000000098,
-        "backgroundDistance": 12505.677154866216,
+        "backgroundDistance": 11903.010902942515,
         "route": "Exit 17 connector",
         "additionalGroundRouteMeters": 0,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -4499,7 +5010,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11136.480242995382,
+        "backgroundDistance": 10841.531531958746,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -4545,7 +5056,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11136.480242995382,
+        "backgroundDistance": 10841.531531958746,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -4653,7 +5164,7 @@
         {
           "t": 5,
           "type": "denied",
-          "message": "Shared or directional thrust bound exceeded. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
+          "message": "Shared or directional thrust bound exceeded. Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown."
         }
       ],
       "requests": [
@@ -4687,6 +5198,7 @@
           },
           "reasons": [
             "Shared or directional thrust bound exceeded.",
+            "Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling.",
             "A 90° heading change requires a validated yaw/nozzle controller, absent from this model.",
             "Candidate intersects the elevated deck / its required clearance buffer before touchdown."
           ],
@@ -4950,22 +5462,22 @@
       "seed": 2026,
       "purpose": "Does an aerial request help when the lead car brakes, compared with ordinary braking?",
       "response": "Assess aerial assistance",
-      "decision": "Do not treat this outcome as safe",
+      "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": null,
-        "progress": 148.24249999999992,
-        "failed": true,
+        "arrival": 22.76,
+        "progress": 615.5600000000104,
+        "failed": false,
         "recoveryFailures": 0,
-        "denials": 1,
+        "denials": 0,
         "hardBrakes": 2,
-        "overlaps": 1,
-        "airUsed": 0,
-        "impulseUsed": 0,
-        "remainingImpulse": 125000,
-        "remainingAir": 10,
+        "overlaps": 0,
+        "airUsed": 3.2000000000000024,
+        "impulseUsed": 59643.68671874986,
+        "remainingImpulse": 65356.313281250186,
+        "remainingAir": 6.800000000000068,
         "backgroundDistance": 8505.198405790143,
-        "classification": "Failed occupied-volume run"
+        "classification": "Synthetic translational comparison; safety unresolved"
       },
       "events": [
         {
@@ -4990,25 +5502,30 @@
         },
         {
           "t": 5.36,
-          "type": "denied",
-          "message": "emergency: Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+          "type": "approved",
+          "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 7.64,
-          "type": "failure",
-          "message": "Occupied-volume contact with LEAD; no traffic was cleared."
+          "t": 8.56,
+          "type": "landed",
+          "message": "Nominal vertical touchdown reached; forward speed is continuous."
+        },
+        {
+          "t": 22.76,
+          "type": "destination",
+          "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
           "t": 5.36,
           "kind": "emergency",
-          "accepted": false,
-          "impulse": 74555.85750000003,
-          "duration": 4,
+          "accepted": true,
+          "impulse": 59644.521679687336,
+          "duration": 3.2,
           "request": {
             "speed": 22,
-            "duration": 4,
+            "duration": 3.2,
             "height": 3,
             "lateral": 0
           },
@@ -5027,24 +5544,20 @@
             "mode": "ground"
           },
           "reasons": [
-            "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+            "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.36,
-            "x": 205.47999999999962,
+            "t": 8.56,
+            "x": 187.8799999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
           "trafficScreen": {
-            "ok": false,
-            "reason": "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).",
+            "ok": true,
+            "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.4080187500000012,
-            "firstConflict": {
-              "t": 6.4,
-              "age": 1.0400000000000005,
-              "bottom": 1.7768524800000007
-            }
+            "minRoofClearance": 0.9426727294921879,
+            "firstConflict": null
           },
           "candidateSearch": [
             {
@@ -5106,6 +5619,44 @@
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 0.530578341172951,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.6612082761774127,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.7991463224817728,
+              "reasons": [
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": true,
+              "impulse": 59644.521679687336,
+              "clearance": 0.9426727294921879,
+              "reasons": []
             }
           ],
           "groundGap": 7.921600000000396
@@ -5499,6 +6050,94 @@
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
+            },
+            {
+              "duration": 3.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 70828.03379501383,
+              "clearance": 1.1292837286392805,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 67100.20452674893,
+              "clearance": 0.9093772748056672,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve."
+              ]
+            },
+            {
+              "duration": 3.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 63372.36796254837,
+              "clearance": 0.6167999999999956,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3.2,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 59644.521679687336,
+              "clearance": 0.2435039794921836,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 3,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 55916.662222222236,
+              "clearance": -0.20969163851852368,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.8,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 52188.784548104995,
+              "clearance": -0.7197000000000054,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.6,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 48460.881110605376,
+              "clearance": -1.2120300829802917,
+              "reasons": [
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
+            },
+            {
+              "duration": 2.4,
+              "apex": 3,
+              "accepted": false,
+              "impulse": 44732.940277777816,
+              "clearance": -1.4967219907407412,
+              "reasons": [
+                "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
+                "Within-flight jerk limit exceeded.",
+                "Insufficient impulse after mandatory completion reserve.",
+                "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
+              ]
             }
           ],
           "groundGap": 20.361600000001374
@@ -5527,7 +6166,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 12576.029744529498,
+        "backgroundDistance": 11949.723194084048,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -5573,7 +6212,7 @@
         "impulseUsed": 90741.37073260028,
         "remainingImpulse": 34258.62926739971,
         "remainingAir": 5.400000000000098,
-        "backgroundDistance": 12573.115249636288,
+        "backgroundDistance": 11972.173350468345,
         "route": "Exit 17 connector",
         "additionalGroundRouteMeters": 0,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -5673,7 +6312,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11188.84819156289,
+        "backgroundDistance": 10893.900159907043,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -5719,7 +6358,7 @@
         "impulseUsed": 0,
         "remainingImpulse": 125000,
         "remainingAir": 10,
-        "backgroundDistance": 11188.84819156289,
+        "backgroundDistance": 10893.900159907043,
         "route": "Mainline · next exit required",
         "additionalGroundRouteMeters": 1800,
         "classification": "Translational screening only; attitude, jets and public-road permission unresolved"
@@ -5827,7 +6466,7 @@
         {
           "t": 5,
           "type": "denied",
-          "message": "Shared or directional thrust bound exceeded. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown. Independent eastbound traffic intersects the proposed corridor."
+          "message": "Shared or directional thrust bound exceeded. Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling. A 90° heading change requires a validated yaw/nozzle controller, absent from this model. Candidate intersects the elevated deck / its required clearance buffer before touchdown. Independent eastbound traffic intersects the proposed corridor."
         }
       ],
       "requests": [
@@ -5861,6 +6500,7 @@
           },
           "reasons": [
             "Shared or directional thrust bound exceeded.",
+            "Peak horizontal force 19.3 kN vs 18 kN lateral allocation; peak total 26.3 kN vs 80 kN shared ceiling.",
             "A 90° heading change requires a validated yaw/nozzle controller, absent from this model.",
             "Candidate intersects the elevated deck / its required clearance buffer before touchdown.",
             "Independent eastbound traffic intersects the proposed corridor."

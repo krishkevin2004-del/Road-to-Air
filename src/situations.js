@@ -21,11 +21,15 @@ export function emergencyGate(q,origin,t,c,gap,onset=5){
  if(lead.x>landX&&distance<need)return {ok:false,reason:`Landing recovery gap ${distance.toFixed(1)} m is below ${need.toFixed(1)} m required.`,...details};
  return {ok:true,reason:'Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.',...details};
 }
+// Gentle hops (4.0-5.0 s) are tried first. Only when none passes does the search escalate to
+// shorter, higher-acceleration climbs (still within the 3 g, jerk, thrust and impulse gates), which
+// is what a tight following gap needs: the car must be above the lead roof before it arrives.
+export const RAPID_CLIMB=Object.freeze([3.8,3.6,3.4,3.2,3,2.8,2.6,2.4]);
 // Bounded candidate search, not an optimal controller. Keep the 3 m apex, speed,
 // vehicle limits, resources, external traffic and 0.70 m buffer fixed.
 export function selectBrakeCandidate(origin,t,c,ledger,gap,onset=5,kind='emergency'){
  const attempts=[];let selected;
- for(const duration of kind==='optional'?[4.6]:[4,4.2,4.4,4.6,4.8,5]){
+ for(const duration of kind==='optional'?[4.6]:[4,4.2,4.4,4.6,4.8,5,...RAPID_CLIMB]){
   const q={speed:origin.v,duration,height:3,lateral:0},screen=feasibility(q,c,ledger),gate=emergencyGate(q,origin,t,c,gap,onset);
   const reasons=[...(!screen.ok?screen.reasons:[]),...(!gate.ok?[gate.reason]:[])];
   const candidate={q,screen,gate,reasons};attempts.push({duration,apex:3,accepted:!reasons.length,impulse:screen.impulse,clearance:gate.minRoofClearance,reasons});
@@ -76,7 +80,7 @@ export function simulateHighway(options={}){
  const traffic=t=>[...ground.map(v=>({...v,x:v.x+v.v*t})),...bridge.map(v=>({...v,y:v.y-v.v*t}))];let proposal;
  events.push({t:0,type:'baseline',message:'Northbound ground highway crosses below an eastbound deck at 6 m. A 90° heading-changing request is assessed; attitude control remains unresolved.'});
  for(let step=0;step<=Math.round(28/c.dt);step++){const t=step*c.dt;ego.x=22*t;
-  if(!requested&&t>=5){requested=true;const origin={...ego},screen=screenHighway(q,c),reasons=[...screen.reasons,'A 90° heading change requires a validated yaw/nozzle controller, absent from this model.'];let infrastructure=false,occupied=false;
+  if(!requested&&t>=5){requested=true;const origin={...ego},screen=screenHighway(q,c),reasons=[...screen.reasons,`Peak horizontal force ${(screen.peakLateral/1000).toFixed(1)} kN vs ${(c.lateralThrust/1000).toFixed(0)} kN lateral allocation; peak total ${(screen.peak/1000).toFixed(1)} kN vs ${(c.thrust/1000).toFixed(0)} kN shared ceiling.`,'A 90° heading change requires a validated yaw/nozzle controller, absent from this model.'];let infrastructure=false,occupied=false;
    for(let i=1;i<screen.samples.length;i++){const a=screen.samples[i-1],b=screen.samples[i],aa={...ego,x:origin.x+a.x,y:origin.y+a.y,z:a.z},bb={...ego,x:origin.x+b.x,y:origin.y+b.y,z:b.z};const deck={x:170,y:-10,z:5.4,length:10,width:240,height:.6};if(sweptOverlap(aa,bb,deck,deck,c,.3))infrastructure=true;for(const car of traffic(t+b.t).filter(v=>v.bridge))if(sweptOverlap(aa,bb,{...car,y:car.y+car.v*(b.t-a.t)},car,c,.7))occupied=true;}
    if(infrastructure)reasons.push('Candidate intersects the elevated deck / its required clearance buffer before touchdown.');if(occupied)reasons.push('Independent eastbound traffic intersects the proposed corridor.');
    proposal={...screen,origin,geometry:q,infrastructureClear:!infrastructure,trafficClear:!occupied};if(policy!=='ground')requests.push({t,kind:'elevated highway transfer',accepted:false,duration:q.duration,impulse:screen.impulse,request:q,origin,reasons,screen,landing:{t:t+q.duration,x:origin.x+q.north,y:origin.y-q.east,z:6,uncertainty:22*c.latency}});
