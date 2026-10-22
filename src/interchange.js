@@ -12,7 +12,8 @@ export function interchangeObstacles(){return [
 ];}
 function population(seed,c,blocked){const random=rng(seed),cars=[];for(let lane=0;lane<4;lane++)for(let j=0;j<5;j++){
   const x=-140+j*135+(lane===3?35:lane*14),truck=lane===1&&j===3;
-  cars.push({id:`I${lane}-${j}`,x,y:lane===3?rampY(x):lane*c.laneWidth,z:0,v:21+random()*2,desired:22+random()*2,a:0,lane,truck,length:truck?11:4.7,width:truck?2.5:1.9,height:truck?3.8:1.5,next:0,reaction:.4+random()*.4,headway:1.3+random()*.5,hard:false});
+  const spawn=!(lane===3&&j===0);// the first ramp car would start on the mainline lane-2 centreline, 7 m ahead of I2-0, and be run into
+  const car={id:`I${lane}-${j}`,x,y:lane===3?rampY(x):lane*c.laneWidth,z:0,v:21+random()*2,desired:22+random()*2,a:0,lane,truck,length:truck?11:4.7,width:truck?2.5:1.9,height:truck?3.8:1.5,next:0,reaction:.4+random()*.4,headway:1.3+random()*.5,hard:false};if(spawn)cars.push(car);
 }if(blocked)cars.push({id:'BLOCKED-RAMP',x:211.2,y:19,z:0,v:0,desired:0,a:0,lane:3,length:7,width:2.1,height:2.3,static:true});return cars;}
 function future(car,dt){if(car.bridge)return {...car,y:car.y+car.v*dt};return {...car,x:car.x+car.v*dt,y:car.lane===3?rampY(car.x+car.v*dt):car.y};}
 export function exitGate(q,origin,cars,c,obstacles=interchangeObstacles()){

@@ -2,7 +2,8 @@ import {DEFAULT, vehicle,resources,vertical,lateral,requestLateral,thrustCap,sto
 export function feasibility(request={}, config=DEFAULT, ledger=resources(config)) {
   const c=vehicle(config), q={speed:22,duration:4,height:2.2,lateral:0,...request}, reasons=[];
   for(const k of ['speed','duration','height','lateral']) if(!Number.isFinite(q[k])) throw Error('Request must contain finite SI values');
-  if(q.duration<=0||q.height<=0||q.speed<0||!Number.isFinite(q.lateralInset??0)||(q.lateralInset??0)<0||2*(q.lateralInset??0)>=q.duration) return {ok:false,reasons:['Duration and height must be positive; speed cannot be negative.'],samples:[],impulse:0,request:q};
+  if(q.duration<=0||q.height<=0||q.speed<0) return {ok:false,reasons:['Duration and height must be positive; speed cannot be negative.'],samples:[],impulse:0,request:q};
+  if(!Number.isFinite(q.lateralInset??0)||(q.lateralInset??0)<0||2*(q.lateralInset??0)>=q.duration) return {ok:false,reasons:['Lateral staging inset must be non-negative and shorter than half the duration.'],samples:[],impulse:0,request:q};
   let impulse=0,peak=0,peakVertical=0,peakLateral=0,peakLoad=0,peakJerk=0,forceOK=true,previous=null;
   const samples=[],n=Math.ceil(q.duration/0.01),dt=q.duration/n;
   for(let i=0;i<n;i++) {

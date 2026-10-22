@@ -11,4 +11,6 @@ await mkdir(resolve(output,'docs'), {recursive:true});
 for (const name of await readdir(resolve(root,'docs'))) {
   if (name.endsWith('.md')) await cp(resolve(root,'docs',name),resolve(output,'docs',name));
 }
+await cp(resolve(root,'Road_to_Air_Project_Brief.md'),resolve(output,'Road_to_Air_Project_Brief.md'));
+await cp(resolve(root,'results'),resolve(output,'results'),{recursive:true});
 console.log('Static site built in dist/');
