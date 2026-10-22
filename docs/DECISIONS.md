@@ -1,3 +1,9 @@
+# v0.9 update: what changed in the conclusions
+
+Two statements below were true of v0.6 and are superseded. (1) The nominal aerial climb no longer fails the 32 m case: the bounded search finds a 4.4 s hop that clears the lead (v0.8). (2) The critical 8 m gap no longer ends in an unavoidable contact: a faster 3.2 s hop avoids the contact braking cannot (v0.9, `docs/CHANGES-v0.9.md`). The conclusion becomes a bounded one: the flight helps in a window of roughly 6 to 9.5 m following gap at default assumptions, does nothing below that, and is unnecessary above it. Ground-first remains the default because the window is narrow and the model is point-mass: attitude, plume and sensing are unresolved. The recreation-versus-emergency comparison still shows the opportunity cost as a denied request, not as a worse physical outcome, because braking suffices at its 20 m gap; no honest variant was found where the recreation flight is allowed and the later emergency is also unwinnable by braking.
+
+---
+
 # v0.6 update: decisions and limits
 
 The product now uses one scenario workspace and a visible numerical audit below it. Emergency assistance is an intent distinct from a comparison response. Missed-exit convenience is one selectable route scenario, not the purpose of the whole study. Ordinary lane changes are not positioned as flight use cases; retained cut-in fixtures are labeled recovery stress tests.

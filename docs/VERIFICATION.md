@@ -1,4 +1,8 @@
-# Verification record · October 21, 2026
+# Verification record · October 22, 2026
+
+## Version 0.9 update
+
+70 automated checks pass (8 new in `tests/gapsweep.test.js`, 2 rewritten in `tests/situations.test.js` for the 8 m rescue). Checked beyond the suite: a headless sweep of 1,782 rows over 81 mass/thrust/impulse/latency combinations found no case where a flight causes contact that braking avoids, no case where replay contact disagrees with the analytical stopping margin, and no rescue violating the 3 g, 35 m/s³, impulse-plus-reserve or 0.70 m clearance limits. `lean` replays were compared with full replays for 176 runs with identical outcomes. Exits were swept over 400 seeds and 800 runs with zero background-vehicle overlaps (a mainline-lane ramp spawn that caused 6 to 8 percent of seeds to overlap was removed). The live site was exercised in a browser at desktop and 375 px widths, including assumption changes, invalid input and the slider; the console was empty. Evidence-register claims were cross-checked on 22 Oct 2026 against secondary coverage (Tesla North, AutoGuide, TechCity); video timestamps and one claim (differential flow) remain unverified and are marked so in the register. Not verified: attitude, plume, real sensing, or any real-world safety outcome.
 
 ## Version 0.7 update
 
@@ -81,5 +85,5 @@ No automated UI test framework or external dependency was installed. Browser che
 
 Of the 125 synthetic policy runs, 37 terminate the ego trajectory and 62 record at least one background/ego overlap. These are retained failures of the modeled interactions, not crash-rate estimates. Background contact response is not implemented. Numerical success on the acceptance cases does not erase these limits.
 
-## v0.8 verification
-60 tests pass. Re-ran 12 curated combinations across five seeds. The 32 m braking overflight now executes; the 8 m variant remains denied. UI report verified to show all attempted durations, selected trajectory, actual landing, clearance and resources.
+## v0.8 verification (historical)
+60 tests passed. Re-ran 12 curated combinations across five seeds. The 32 m braking overflight executed; the 8 m variant was still denied at that version (superseded in v0.9). UI report verified to show all attempted durations, selected trajectory, actual landing, clearance and resources.

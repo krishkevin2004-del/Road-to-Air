@@ -1,4 +1,4 @@
-# Road to Air · v0.8
+# Road to Air · v0.9
 
 A local engineering and product-design study of a hypothetical thruster-equipped Roadster sharing synthetic roads with independent traffic. The supplied brief and public-evidence register remain attached. Modeled results do not establish public-road safety or certified Tesla performance.
 
@@ -26,7 +26,7 @@ The menu is curated rather than a free combination of traffic events, intents an
 
 | Situation | Variants | Responses | Why keep it? |
 | --- | --- | --- | --- |
-| Sudden braking ahead | 32 m / critical 8 m following gap | Ground braking / assess aerial assistance | Tests whether flight helps, including a case where neither a ground failure nor urgency permits an obstructed flight. |
+| Sudden braking ahead | 32 m / critical 8 m following gap, plus a sweep of every gap from 4 m up | Ground braking / assess aerial assistance | Tests whether flight helps. At 32 m braking suffices; at 8 m braking records contact and a faster hop avoids it; below about 6 m nothing inside the limits clears the lead. |
 | Recreation now, emergency later | Optional flight at 1 s, completed at 5.6 s; braking hazard at 14 s | No flight / save flight for emergency / recreation first | Isolates completed optional consumption from capability available when a later event occurs. |
 | Missed highway exit | Clear / occupied connector | Next exit / assess connector transfer | Compares an optional route benefit against resource cost and actual landing occupancy. |
 | Intersecting highways | North → east, +6 m deck | One feasibility assessment | Shows why the requested heading-changing concept is rejected; duplicate ground/forecast choices add no information. |
@@ -45,7 +45,7 @@ Candidate times and profiles are presets, not an optimizer's earliest safe depar
 
 ## New physical situations
 
-**Sudden lead braking:** both cars start at 22 m/s. The leader begins finite 8 m/s² braking at 5 s; ego responds after the configured latency, quantized to the physics step. The 32 m and 8 m initial bumper gaps provide distinct ground outcomes. The flight request (bounded 4.0–5.0 s search at a fixed 3 m apex) must clear the leader during climb, flight and landing recovery. No car is teleported to a stop or moved aside. Adjacent vehicles are seeded independent constant-speed demand. Steering is screened over two three-second lateral corridors, not executed as a full comparison branch.
+**Sudden lead braking:** both cars start at 22 m/s. The leader begins finite 8 m/s² braking at 5 s; ego responds after the configured latency, quantized to the physics step. The 32 m and 8 m initial bumper gaps provide distinct ground outcomes. The flight request is a bounded search at a fixed 3 m apex: gentle 4.0–5.0 s hops first, then faster 2.4–3.8 s climbs only if none passes. It must clear the leader during climb, flight and landing recovery. Braking begins exactly one configured latency after onset. No car is teleported to a stop or moved aside. Adjacent vehicles are seeded independent constant-speed demand. Steering is screened over two three-second lateral corridors, not executed as a full comparison branch.
 
 **Northbound → elevated eastbound highway:** the request changes heading 90°, moves 60 m north and 60 m east, and targets a deck 6 m above the ground. A quintic boundary-value profile matches road-aligned endpoint velocities and zero endpoint accelerations. The report integrates total support and horizontal force. The dashed curve is a rejected proposal. The actual car continues north. This candidate violates the conservative directional bound, intersects the deck clearance buffer and lacks validated yaw/nozzle control; it is never granted success by raising B1 or clearing traffic.
 
@@ -55,7 +55,7 @@ Candidate times and profiles are presets, not an optimizer's earliest safe depar
 
 ## Fixed assumptions and implementation
 
-B1 is compressed nitrogen, at most ten cumulative airborne seconds per full resource cycle, and a six-hour complete refill turnaround. These are study assumptions. Usable impulse, gas equivalent and mandatory completion reserve are separate physical ledgers; ten seconds never supplies unlimited thrust.
+B1 is compressed nitrogen, at most ten cumulative airborne seconds per full resource cycle, and a six-hour complete refill turnaround. These are study assumptions. Usable impulse, gas equivalent and mandatory completion reserve are separate physical ledgers; ten seconds never supplies unlimited thrust. In practice impulse binds first: holding 1,900 kg off the ground costs about 18.6 kN·s per second, so at 125 kN·s a single flight tops out near 6 s (the 12 kN·s completion reserve included). The ten-second figure is the top of a third-party best-case estimate (250 kg of gas, 650 m/s exhaust, 1,700 kg), not a Tesla number.
 
 - `data/evidence.json`: public statements, interpretation limits and synthetic-scenario provenance.
 - `data/vehicle.json`: configurable unresolved vehicle interpretation; B1 stays frozen in `src/model.js`.
@@ -70,14 +70,17 @@ B1 is compressed nitrogen, at most ten cumulative airborne seconds per full reso
 
 ## Verification and limits
 
-58 automated checks pass. They cover analytical motion, force allocation, resource conservation, refill, collisions, successful and failed recovery, seeded reproduction, timestep convergence, replay, cameras, new brake-onset continuity and latency, matched lead demand, highway endpoint velocities, force integration, immutable denial and report distinctions. The current audit runs all 12 offered combinations across five seeds (60 runs), plus 36 envelope points. `results/paired-runs.*` are the retained historical v0.6 technical batch and are not the current public catalog. Seeds are synthetic variation, not a statistical safety dataset.
+70 automated checks pass. They cover analytical motion, force allocation, resource conservation, refill, collisions, successful and failed recovery, seeded reproduction, timestep convergence, replay, cameras, new brake-onset continuity and latency, matched lead demand, highway endpoint velocities, force integration, immutable denial and report distinctions. The current audit runs all 12 offered combinations across five seeds (60 runs), plus 36 envelope points. `results/paired-runs.*` are the retained historical v0.6 technical batch and are not the current public catalog. Seeds are synthetic variation, not a statistical safety dataset.
 
 The original car artwork now has a lower canopy, sculpted body surfaces, slim lights, a splitter, turbine wheels and detailed brakes. The simulation Roadster uses a shared tapered sports-car mesh in both road renderers. These are display changes inside the unchanged physical dimensions, not new vehicle specifications.
 
 This is a translational model. Attitude, nozzle torque/control, plume footprint, pressure thermodynamics, real sensors, weather and road law remain unresolved. The new adjacent/bridge flows use constant-speed demand, not calibrated driver reactions. No complete highway route graph or conventional-interchange detour time is implemented. Steering remains a screen. A successful heading-changing flight is not implemented: the elevated-highway request is explicitly denied. See `docs/MODEL.md`, `docs/CHANGES-v0.6.md` and `docs/VERIFICATION.md` for details.
 
+### v0.9: where the flight helps
+The sudden-braking search now escalates to faster climbs when gentle hops cannot clear a close lead vehicle. At the 8 m gap braking has a −1.72 m stopping margin and records contact, while a 3.2 s, 3 m hop (1.95 g, 17.5 m/s³, 59.6 kN·s plus the 12 kN·s reserve) clears the lead roof by 0.94 m with no modeled contact. Section 06 of the page sweeps every gap from 4 m (up to 10 m beyond the braking boundary, which follows the engineering assumptions): contact in both responses at 4–5.5 m, a flight rescue at 6–9.5 m, braking sufficient from 10 m. Each cell is a full engine replay (`lean` mode, verified identical to the full replay), not a formula. The replay's braking onset was made exact so contact agrees with the analytical margin at every gap. Point-mass result: attitude, jet plume on the vehicle below and sensing uncertainty are not modeled. See `docs/CHANGES-v0.9.md`.
+
 ### v0.8: search before denial
-The 32 m sudden-braking case now finds and executes a 4.4 s, 3 m apex jump. Liftoff is 5.36 s; touchdown is 9.76 s. Minimum sampled roof clearance during longitudinal body overlap is about 0.89 m. The swept 0.70 m buffered corridor check also passes. Actual consumption is about 82.01 kN·s and 4.4 airborne seconds. This demonstrates a feasible translational overflight without reducing the clearance buffer or changing the lead trajectory. Ground braking also succeeds, so physical feasibility is separate from necessity or a real safety verdict.
+The 32 m sudden-braking case finds and executes a 4.4 s, 3 m apex jump. Liftoff is 5.36 s; touchdown is 9.76 s. Minimum sampled roof clearance during longitudinal body overlap is about 0.89 m. The swept 0.70 m buffered corridor check also passes. Actual consumption is about 82.01 kN·s and 4.4 airborne seconds. This demonstrates a feasible translational overflight without reducing the clearance buffer or changing the lead trajectory. Ground braking also succeeds, so physical feasibility is separate from necessity or a real safety verdict. (v0.8 left the 8 m case rejected; v0.9 supersedes that.)
 
 ## Deploy on Vercel
 
