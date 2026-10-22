@@ -1,0 +1,323 @@
+{
+  "version": "B1-interpretation-1",
+  "units": "SI",
+  "parameters": {
+    "mass": {
+      "value": 1900,
+      "unit": "kg",
+      "range": [
+        1700,
+        2300
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Conservative constant loaded mass; not independently measured."
+    },
+    "thrust": {
+      "value": 80000,
+      "unit": "N",
+      "range": [
+        25000,
+        80000
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Shared total force budget interpreting ambiguous reported 80 kN."
+    },
+    "verticalThrust": {
+      "value": 55000,
+      "unit": "N",
+      "range": [
+        20000,
+        65000
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed vertical allocation; coupled to total force cap."
+    },
+    "lateralThrust": {
+      "value": 18000,
+      "unit": "N",
+      "range": [
+        5000,
+        25000
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed lateral allocation; coupled to total force cap."
+    },
+    "impulse": {
+      "value": 125000,
+      "unit": "N s",
+      "range": [
+        80000,
+        162500
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Bounded useful impulse; not derived from tank volume."
+    },
+    "exhaustVelocity": {
+      "value": 500,
+      "unit": "m/s",
+      "range": [
+        450,
+        650
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Effective force-to-gas conversion, no tank thermodynamics."
+    },
+    "reserve": {
+      "value": 12000,
+      "unit": "N s",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Mandatory margin remaining at completion / correction approval; cannot be waived."
+    },
+    "futureReserve": {
+      "value": 72000,
+      "unit": "N s",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Product-policy allocation protected only by reserve-first; not safety percentage."
+    },
+    "latency": {
+      "value": 0.35,
+      "unit": "s",
+      "range": [
+        0.15,
+        1.2
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Combined sensing / decision delay; response split not modeled."
+    },
+    "gravity": {
+      "value": 9.81,
+      "unit": "m/s\u00b2",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Constant standard near-surface approximation."
+    },
+    "maxLoad": {
+      "value": 3,
+      "unit": "g specific force",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed point-mass occupant limit, no restraint validation."
+    },
+    "maxJerk": {
+      "value": 35,
+      "unit": "m/s\u00b3",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Within-flight derivative bound; contact-transition jerk unresolved."
+    },
+    "brake": {
+      "value": 7.5,
+      "unit": "m/s\u00b2",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Ground deceleration cap; dry-road assumption, not measured Roadster result."
+    },
+    "length": {
+      "value": 4.8,
+      "unit": "m",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed rectangular body length."
+    },
+    "width": {
+      "value": 2,
+      "unit": "m",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed rectangular body width."
+    },
+    "bodyHeight": {
+      "value": 1.25,
+      "unit": "m",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Assumed body height; z denotes bottom above road."
+    },
+    "buffer": {
+      "value": 0.3,
+      "unit": "m",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Default analysis uncertainty margin; overlap metrics use zero extra buffer."
+    },
+    "laneWidth": {
+      "value": 3.7,
+      "unit": "m",
+      "range": null,
+      "category": "Engineering / numerical assumption",
+      "rationale": "Synthetic geometry, not Michigan design-standard claim."
+    },
+    "dt": {
+      "value": 0.02,
+      "unit": "s",
+      "range": [
+        0.01,
+        0.02,
+        0.04
+      ],
+      "category": "Engineering / numerical assumption",
+      "rationale": "Fixed physics step; replay snapshots every 0.1 s."
+    }
+  },
+  "syntheticScenario": {
+    "seed": 42,
+    "lanes": 3,
+    "horizonSeconds": 28,
+    "destinationMeters": 500,
+    "optionalRequestSeconds": 3,
+    "optionalDurationSeconds": 4.6,
+    "emergencyEventSeconds": 14,
+    "emergencyX": 335,
+    "emergencyDurationSeconds": 4,
+    "apexMeters": 3,
+    "earlyCutInSeconds": 3.2,
+    "lateCutInSeconds": 6.5,
+    "cutInDurationSeconds": 0.9,
+    "cutInInitialX": 20,
+    "cutInDesiredSpeed": 18,
+    "trafficCount": 16,
+    "trafficSpeedRange": [
+      20,
+      24
+    ],
+    "desiredSpeedRange": [
+      22,
+      25
+    ],
+    "headwayRange": [
+      1.2,
+      2
+    ],
+    "decisionIntervalRange": [
+      0.4,
+      0.9
+    ],
+    "truckGeometryMeters": [
+      11,
+      2.5,
+      3.8
+    ],
+    "passengerGeometryMeters": [
+      4.7,
+      1.9,
+      1.5
+    ],
+    "IDM": {
+      "acceleration": 1.5,
+      "comfortableBrake": 2.5,
+      "maximumBrake": 7,
+      "minimumGap": 2,
+      "exponent": 4
+    },
+    "forecastBufferMeters": 0.7,
+    "postLandingPredictionSeconds": 0.6,
+    "correctionTargetLane": 0,
+    "class": "All synthetic scenario / behavior / numerical assumptions. Not calibrated observations."
+  },
+  "interchangeScenario": {
+    "category": "Synthetic engineering / geometry / behavior assumptions",
+    "missedMarkerMeters": 80,
+    "requestSeconds": 5,
+    "sourceLaneY": 7.4,
+    "connectorY": 19,
+    "transferDurationSeconds": 4.6,
+    "lateralInsetEachEndSeconds": 0.5,
+    "apexMeters": 3,
+    "additionalGroundRouteMeters": 1800,
+    "destinationX": 500,
+    "destinationCondition": "Must be on Exit 17 connector, not just beyond x=500",
+    "railHeightMeters": 1,
+    "railWidthMeters": 0.4,
+    "railStartX": 80,
+    "railEndX": 380,
+    "railY": [
+      9.45,
+      16.95
+    ],
+    "deckX": 300,
+    "deckZ": 5.4,
+    "deckThickness": 0.6,
+    "deckWidthAlongX": 10,
+    "deckSpanAlongY": 220,
+    "bridgeTraffic": "24 vehicles, independent seeded constant-speed flow at 20\u201322 m/s; 80 m initial longitudinal spacing per lane",
+    "groundTraffic": "20 vehicles, same delayed IDM assumptions as baseline; connector y follows rampY(x)",
+    "optionalBlockedConnector": {
+      "x": 211.2,
+      "y": 19,
+      "length": 7,
+      "width": 2.1,
+      "height": 2.3
+    },
+    "limits": "Attitude, jet footprint, real sensors and public-road permission unresolved."
+  },
+  "suddenBrakingScenario": {
+    "category": "Synthetic scenario / behavior assumptions, not measured Roadster or driver behavior",
+    "onsetSeconds": 5,
+    "initialSpeedMetersPerSecond": 22,
+    "initialBumperGapsMeters": [
+      32,
+      8
+    ],
+    "leadDecelerationMetersPerSecondSquared": 8,
+    "egoBrake": "Configured brake, baseline 7.5 m/s\u00b2 after configured response latency",
+    "leadMotion": "Continuous finite-deceleration trajectory; no teleport or instantly stopped insertion",
+    "optionalRequestSeconds": 1,
+    "optionalDurationSeconds": 4.6,
+    "emergencyDurationSeconds": 4,
+    "apexMeters": 3,
+    "flightForecast": "Script-conditioned exact lead braking path; no sensor uncertainty. Same predictor in compared aerial labels.",
+    "adjacentTraffic": "14 seeded constant-speed cars, 65 m nominal spacing with 0\u201312 m jitter; speeds 20\u201323 m/s; no clearing for flight",
+    "steering": "Two three-second 3.7 m lateral profiles, acceleration and swept-corridor screen only; not executed branches",
+    "forecastBufferMeters": 0.7,
+    "recoveryWindowSeconds": 0.6,
+    "limitation": "A rejected flight does not imply ground collision avoidance. No real-world rescue guarantee."
+  },
+  "elevatedHighwayScenario": {
+    "category": "Synthetic request and geometry assumptions",
+    "requestSeconds": 5,
+    "entrySpeedMetersPerSecond": 22,
+    "northDisplacementMeters": 60,
+    "eastDisplacementMeters": 60,
+    "deckElevationMeters": 6,
+    "durationSeconds": 4.6,
+    "verticalBumpMeters": 2,
+    "headingChangeDegrees": 90,
+    "northCoordinateOfDeckMeters": 170,
+    "deckBottomMeters": 5.4,
+    "deckThicknessMeters": 0.6,
+    "profile": "Quintic Hermite boundary-value curve per axis; north velocity 22\u21920 m/s, east 0\u219222 m/s, endpoint accelerations zero",
+    "forceScreen": "Use shared total force and vertical bounds; conservatively apply existing 18 kN lateral bound to total horizontal force. No new longitudinal nozzle allocation is assumed.",
+    "traffic": "Ten independently seeded constant-speed elevated cars, 20\u201323 m/s, 65 m spacing; sixteen adjacent northbound cars, 21\u201323 m/s, 80 m spacing",
+    "admission": "Always denied in this version because validated 90\u00b0 yaw/nozzle control is absent, in addition to any force, deck or traffic failure",
+    "actualMotion": "Continues north on ground; proposed dashed path is never counted as flown",
+    "groundAlternative": "Conventional interchange, unmodeled detour distance/time"
+  },
+  "priorUseScenario": {
+    "category": "Synthetic recreation / opportunity-cost comparison",
+    "optionalRequestSeconds": 1,
+    "optionalDurationSeconds": 4.6,
+    "nominalOptionalTouchdownSeconds": 5.6,
+    "leadBrakingOnsetSeconds": 14,
+    "initialSpeedMetersPerSecond": 22,
+    "initialBumperGapMeters": 20,
+    "leadBrakeMetersPerSecondSquared": 8,
+    "purpose": "Completed optional flight depletes the resources before a later braking hazard. Ground braking remains a viable safety comparator; retained aerial capability is not assumed necessary for survival."
+  },
+  "brakingTrajectorySearch": {
+    "classification": "Synthetic engineering assumption; not a Tesla specification",
+    "durationCandidatesSeconds": [
+      4,
+      4.2,
+      4.4,
+      4.6,
+      4.8,
+      5
+    ],
+    "fixedApexMeters": 3,
+    "selection": "First candidate passing force, resource, swept traffic and recovery checks; if none pass retain the first rejected candidate for inspection",
+    "forecastBufferMeters": 0.7,
+    "scope": "Sudden-braking emergency requests; optional flight remains 4.6 s"
+  }
+}

@@ -1,0 +1,9 @@
+# v0.7 — purposeful scenarios and Roadster styling
+
+The public simulation menu is reduced to four questions: sudden lead braking, recreation before a later emergency, a missed highway exit and an intersecting-highway feasibility study. There are twelve relevant situation/variant/response combinations. Technical cut-in/stress fixtures and duplicate forecast policies remain headless test material. Intent is tied to the situation instead of creating arbitrary combinations. See `SCENARIO-AUDIT.md` for the audit rationale and actual baseline findings.
+
+The recreation sequence now completes the 4.6 s flight before the 14 s braking event. Its 20 m synthetic initial gap permits a meaningful comparison: a full-resource candidate is available, prior recreation removes that availability, and ordinary ground braking remains viable. No “only flight can save you” claim is made. The current batch runs all twelve combinations across five seeds (60 runs), with all results retained.
+
+The car artwork has a lower sports-car canopy, longer sculpted hood, sharper shoulder line, side channel, flush door, slim front lighting, rear light signature, splitter, detailed turbine wheels and brake calipers. It remains an original silver concept illustration. A shared normalized display mesh gives the in-scene Roadster a tapered nose, swept glazing, hood, wheels and light signatures in both road renderers. All styling stays within the unchanged physical footprint; collision and resource calculations do not import the design mesh.
+
+58 checks pass. SVG structure and JavaScript syntax are checked, and the illustration and scenario choices are inspected in the browser. Vehicle interpretation, B1, force limits, completion reserve and original adverse fixtures remain unchanged. The north-to-east transfer remains a rejected request, not a newly validated flight capability.

@@ -1,0 +1,39 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {BASELINE,DEFAULT,resources} from '../src/model.js';
+import {simulate,matched} from '../src/simulation.js';
+import {boundary,highwayPose,screenHighway,leadPose} from '../src/situations.js';
+import {highwayView} from '../src/highway-render.js';
+import {analyzeRun} from '../src/analysis.js';
+const close=(a,b,tol=1e-6)=>assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}`);
+test('moving lead is continuous at brake onset and stops under finite deceleration',()=>{const a=leadPose(5,DEFAULT,32),b=leadPose(5.001,DEFAULT,32);close(b.x-a.x,22*.001-4*.001**2);close(b.v,21.992);close(leadPose(20,DEFAULT,32).v,0);close(leadPose(20,DEFAULT,32).x-a.x,22**2/16);});
+test('sudden braking observations follow configured latency and timestep',()=>{for(const latency of [.15,.35,.7]){const r=simulate({scenario:'brake',policy:'coordinated',config:{latency}}),obs=r.events.find(e=>e.type==='disturbance');assert.ok(obs.t>=5+latency-1e-7);assert.ok(obs.t<5+latency+r.config.dt+1e-7);assert.equal(r.events.find(e=>e.type==='hazard-onset').t,5);}});
+test('adequate and critical headway retain distinct ground outcomes',()=>{const a=simulate({scenario:'brake',policy:'ground'}),b=simulate({scenario:'brakeTight',policy:'ground'});assert.ok(a.study.groundStopMargin>0);assert.ok(b.study.groundStopMargin<0);assert.equal(a.summary.failed,false);assert.equal(b.summary.failed,true);assert.ok(b.events.some(e=>e.type==='failure'));});
+test('ground failure cannot force an aerial corridor to pass',()=>{const r=simulate({scenario:'brakeTight',policy:'coordinated'});assert.equal(r.requests[0].accepted,false);assert.equal(r.summary.airUsed,0);assert.equal(r.summary.impulseUsed,0);assert.equal(r.summary.failed,true);assert.match(r.requests[0].reasons.join(' '),/corridor/);});
+test('optional use spends a physical ledger; consent and future reserve remain gates',()=>{const a=simulate({scenario:'brake',policy:'optional'}),b=simulate({scenario:'brake',policy:'optional',consent:false}),c=simulate({scenario:'brake',policy:'reserve'});assert.ok(a.summary.impulseUsed>80000);assert.ok(a.requests.find(r=>r.kind==='emergency').reasons.length);assert.equal(b.requests[0].accepted,false);assert.equal(c.requests[0].accepted,false);assert.ok(a.summary.remainingAir>5);assert.ok(a.summary.remainingImpulse<40000);});
+test('braking lead and adjacent demand are matched across response strategies',()=>{const runs=matched({scenario:'brake',seed:17});const ref=runs[0].frames.find(f=>f.t===6).traffic;for(const r of runs)assert.deepEqual(r.frames.find(f=>f.t===6).traffic,ref);});
+test('quintic highway boundary matches north/east positions and road-aligned velocities',()=>{for(const [d,v0,v1] of [[60,22,0],[60,0,22],[6,0,0]]){const a=boundary(0,4.6,d,v0,v1),b=boundary(4.6,4.6,d,v0,v1);close(a.p,0);close(a.v,v0);close(a.a,0);close(b.p,d);close(b.v,v1);close(b.a,0);}const q={duration:4.6,north:60,east:60,deck:6,speed:22},p=highwayPose(4.6,q);close(p.x,60);close(p.y,-60);close(p.z,6);close(p.vx,0);close(p.vy,-22);close(p.vz,0);});
+test('highway force integral is independently reproducible from samples',()=>{const q={duration:4.6,north:60,east:60,deck:6,speed:22},f=screenHighway(q,DEFAULT),sum=f.samples.slice(1).reduce((s,p)=>s+p.force*.01,0);close(sum,f.impulse,.001);assert.ok(f.impulse>DEFAULT.mass*DEFAULT.gravity*q.duration);assert.ok(f.reasons.length);assert.ok(f.peakLateral>DEFAULT.lateralThrust);});
+test('unsupported highway turn is denied even with more impulse; actual car keeps heading north',()=>{const r=simulate({scenario:'highway',policy:'coordinated',config:{impulse:162500}});assert.equal(r.requests[0].accepted,false);assert.match(r.requests[0].reasons.join(' '),/90°/);assert.equal(r.summary.airUsed,0);assert.equal(r.summary.impulseUsed,0);assert.equal(r.summary.arrival,null);for(const f of r.frames){assert.equal(f.ego.y,3.7);assert.equal(f.ego.z,0);assert.equal(f.ego.mode,'ground');}assert.ok(r.frames.at(-1).traffic.some(c=>c.bridge&&c.z===6));});
+test('new scenarios conserve time, impulse and gas with deterministic reproduction',()=>{for(const scenario of ['brake','brakeTight','highway'])for(const r of matched({scenario,seed:42})){assert.deepEqual(r.baseline,BASELINE);for(const f of r.frames){close(f.resources.air+f.resources.usedAir,10);close(f.resources.impulse+f.resources.usedImpulse,r.config.impulse);close(f.resources.gas,f.resources.impulse/r.config.exhaustVelocity);}assert.deepEqual(r.frames,simulate(r.options).frames);}});
+test('brake-check decisions converge at 20/10ms; event quantization stays explicit',()=>{for(const scenario of ['brake','brakeTight'])for(const policy of ['ground','coordinated','optional','reserve']){const a=simulate({scenario,policy}),b=simulate({scenario,policy,config:{dt:.01}});assert.equal(a.summary.failed,b.summary.failed);assert.deepEqual(a.requests.map(r=>r.accepted),b.requests.map(r=>r.accepted));assert.ok(Math.abs(a.summary.progress-b.summary.progress)<1);assert.ok(Math.abs(a.summary.impulseUsed-b.summary.impulseUsed)<900);}});
+test('report separates rejected plan, actual liftoff and matched ground reference',()=>{const runs=matched({scenario:'brakeTight',seed:42}),a=analyzeRun(runs.find(r=>r.options.policy==='coordinated'),runs),g=analyzeRun(runs[0],runs);assert.equal(a.rows[0].actualLift,null);assert.equal(a.rows[0].actualLand,null);assert.ok(a.rows[0].plannedLand>5);assert.equal(g.referenceOnly,true);assert.notEqual(g.reference,'ground');assert.ok(g.rows.length);const h=analyzeRun(simulate({scenario:'highway'}));assert.match(h.title,/Do not authorize/);assert.match(h.formulas.join(' '),/yaw/);});
+
+test('highway Follow keeps the actual northbound car inside the viewport over the entire replay',()=>{for(const [w,h] of [[850,600],[350,430]])for(const x of [0,110,330,616])for(const zoom of [.65,1,2]){const v=highwayView(w,h,'follow',{x},zoom),screenY=h*.58-(x-v.north)*v.scale,screenX=w*.5+(-3.7-v.east)*v.scale;assert.ok(screenY>0&&screenY<h);assert.ok(screenX>0&&screenX<w);}});
+
+test('bounded search finds a buffered overflight instead of rejecting only the first preset',()=>{
+ const r=simulate({scenario:'brake',policy:'coordinated'}),q=r.requests[0];
+ assert.equal(q.accepted,true);assert.equal(q.duration,4.4);assert.equal(q.request.height,3);
+ assert.deepEqual(q.candidateSearch.map(x=>x.accepted),[false,false,true]);
+ assert.ok(q.trafficScreen.minRoofClearance>.7);assert.equal(q.trafficScreen.requiredClearance,.7);
+ assert.equal(r.summary.failed,false);assert.equal(r.summary.overlaps,0);
+ close(r.summary.airUsed,4.4);assert.ok(r.summary.remainingImpulse>=r.config.reserve);
+ assert.ok(r.events.some(e=>e.type==='landed'&&Math.abs(e.t-9.76)<.001));
+ assert.match(analyzeRun(r).title,/Jump feasible/);
+});
+test('search cannot bypass gas shortage or modify the lead trajectory',()=>{
+ const low=simulate({scenario:'brake',policy:'coordinated',config:{impulse:80000}});
+ assert.equal(low.requests[0].accepted,false);assert.equal(low.summary.impulseUsed,0);
+ const ground=simulate({scenario:'brake',policy:'ground'}),air=simulate({scenario:'brake',policy:'coordinated'});
+ for(const a of ground.frames){const b=air.frames.find(f=>f.t===a.t);if(b)assert.deepEqual(a.traffic,b.traffic);}
+});

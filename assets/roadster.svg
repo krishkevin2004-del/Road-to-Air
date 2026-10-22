@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+<title id="title">Silver Roadster concept</title><desc id="desc">An original low two-door sports-car illustration with a sculpted silver body, dark panoramic canopy, turbine wheels and slim lighting. Concept styling only.</desc>
+<defs>
+ <linearGradient id="body" x1="0" y1="0" x2=".12" y2="1"><stop stop-color="#f6f7f4"/><stop offset=".25" stop-color="#b9c0be"/><stop offset=".46" stop-color="#626e70"/><stop offset=".49" stop-color="#d0d6d1"/><stop offset=".64" stop-color="#7c8988"/><stop offset="1" stop-color="#252e30"/></linearGradient>
+ <linearGradient id="hood" x1=".2" y1="0" x2=".7" y2="1"><stop stop-color="#e6ebe6"/><stop offset=".45" stop-color="#9ca8a7"/><stop offset="1" stop-color="#364749"/></linearGradient>
+ <linearGradient id="glass" x1=".2" y1="0" x2=".7" y2="1"><stop stop-color="#607579"/><stop offset=".3" stop-color="#283f46"/><stop offset=".7" stop-color="#101c23"/><stop offset="1" stop-color="#080e14"/></linearGradient>
+ <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e2e7e6"/><stop offset=".4" stop-color="#68777d"/><stop offset=".7" stop-color="#c0caca"/><stop offset="1" stop-color="#34454a"/></linearGradient>
+ <linearGradient id="spoke"><stop stop-color="#dae2df"/><stop offset="1" stop-color="#718188"/></linearGradient>
+ <radialGradient id="tire"><stop stop-color="#465258"/><stop offset=".68" stop-color="#1c252a"/><stop offset=".83" stop-color="#090f14"/><stop offset="1" stop-color="#1a2327"/></radialGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+ <g id="wheel"><circle r="68" fill="url(#tire)" stroke="#354044" stroke-width="2"/><circle r="56" fill="#0d171d" stroke="url(#rim)" stroke-width="3"/><circle r="42" fill="#586467"/><circle r="37" fill="#303d43" stroke="#7e8b89" stroke-width="1"/><path d="M31-26q13 8 14 26t-12 26l-7-10V-16Z" fill="#bb7350"/>
+ <g id="blade" fill="url(#spoke)"><path d="M-7-6-18-50-6-55 8-12 6 1Z"/><path d="M-7-6-28-46-23-50-1-12Z" opacity=".65"/></g><use href="#blade" transform="rotate(72)"/><use href="#blade" transform="rotate(144)"/><use href="#blade" transform="rotate(216)"/><use href="#blade" transform="rotate(288)"/><circle r="12" fill="#24343b" stroke="#a8b8b8" stroke-width="2"/><circle r="4" fill="#87999b"/><circle r="61" fill="none" stroke="#738080" stroke-width=".5" opacity=".5"/></g>
+</defs>
+<ellipse cx="560" cy="352" rx="455" ry="20" fill="#000" opacity=".9" filter="url(#soft)"/>
+<!-- Low, long hood; a compact canopy and broad rear haunches. -->
+<path d="M87 269q14-33 71-46l229-37q75-65 157-67l115 8q62 11 126 60l134 24q64 12 91 51l-7 46-79 27-745-2-80-20Z" fill="url(#body)" stroke="#b0bdb9" stroke-width="1.4"/>
+<path d="M109 267q86-29 278-65l391-9 149 26 42 24-189 12-359-9Z" fill="url(#hood)"/>
+<path d="M386 187q84-60 158-61l111 8q56 13 112 55l-131-2-165 5Z" fill="#ced7d1"/>
+<path d="M414 184q70-48 132-49l106 7q48 13 91 44l-118-2-152 6Z" fill="url(#glass)" stroke="#5e7175" stroke-width="1.2"/>
+<path d="M491 144 472 188M649 141l-23 43" stroke="#99abaa" stroke-width="3"/>
+<path d="M501 143q58-12 133 1l-18 11-117-4Z" fill="#b1c3c5" opacity=".14"/>
+<path d="m477 190 148-5 43 9-182 5Z" fill="#080f15"/>
+<!-- Fender shoulders, flush door and a tapered side air channel. -->
+<path d="M129 241q127-38 270-39m297-7 84-3 143 28" fill="none" stroke="#e2eae5" stroke-width="1.6" opacity=".75"/>
+<path d="m413 210 20 83q90 8 218-3l48-85" fill="none" stroke="#25383c" stroke-width="1.8"/>
+<path d="m448 213 35-4" stroke="#dce5e0" stroke-width="3" stroke-linecap="round"/>
+<path d="M437 267q94-8 216-11l46-28-23 55-231 16Z" fill="#33484c" opacity=".65"/>
+<path d="m448 281 205-13 24-16-8 24-219 15Z" fill="#111e25"/>
+<path d="M151 307q275 21 602 1l174-17-5 24-167 20-577-2Z" fill="#111e25"/>
+<path d="M399 309q177 12 341-3" fill="none" stroke="#afc0ba" stroke-width="1.5"/>
+<path d="m702 193 34-17 23 7-6 13-40 8Z" fill="#263e45" stroke="#a6b8b5" stroke-width="1"/>
+<path d="m708 194 31-9" stroke="#d8e1dc" opacity=".6"/>
+<!-- Slim front lights, splitter and a restrained rear light signature. -->
+<path d="m101 264 91-16 30 7-34 12-86 8Z" fill="#0b1920"/>
+<path d="m108 265 79-12 24 3-26 6-77 9Z" fill="#e5f6f2"/><path d="m110 267 72-10" stroke="#b6e9ed" stroke-width="2"/>
+<path d="m100 283 52-5 47 9-33 11-64-1Z" fill="#09131c"/><path d="m105 307 93 9-16 8-82-11Z" fill="#080e15"/>
+<path d="m934 228 57 19 12 10-75-17Z" fill="#401d1d"/><path d="m936 230 57 18" stroke="#ef7467" stroke-width="3" stroke-linecap="round"/>
+<path d="m943 271 58 5-4 24-55 15Z" fill="#0b151d"/><path d="m953 281 33 3m-34 9 31-1" stroke="#53666b" stroke-width="2"/>
+<!-- Wheel wells retain the visual footprint; they do not alter modeled dimensions. -->
+<path d="M210 310q-5-102 77-104 82 0 85 106M763 307q-6-105 80-109 87 1 88 108" fill="#0c141a"/>
+<use href="#wheel" transform="translate(286 302) scale(.97 1.04)"/><use href="#wheel" transform="translate(844 298) scale(1.01 1.07)"/>
+<path d="M213 279q15-73 74-72 66 1 80 72M767 275q15-76 78-76 67 0 82 77" fill="none" stroke="#e0e8e2" stroke-width="2" opacity=".7"/>
+<path d="M230 258q24-41 56-40m500 35q23-42 58-43" fill="none" stroke="#f5f9f3" stroke-width="1" opacity=".65"/>
+<path d="m231 226 138-20m350 2 60 7" stroke="#c1d1cf" opacity=".45"/>
+<text x="515" y="237" fill="#cdd8d3" font-size="8" font-family="Arial,sans-serif" letter-spacing="3">ROAD TO AIR</text>
+</svg>

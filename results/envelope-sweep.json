@@ -1,0 +1,326 @@
+[
+  {
+    "mass": 1700,
+    "speed": 13.4,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 33353.252000000015,
+    "distance": 26.8,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1700,
+    "speed": 13.4,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 66707.90650000001,
+    "distance": 53.6,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 13.4,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 100061.9722962963,
+    "distance": 80.4,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 13.4,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 166769.99401599998,
+    "distance": 134,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 1700,
+    "speed": 22,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 33353.252000000015,
+    "distance": 44,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1700,
+    "speed": 22,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 66707.90650000001,
+    "distance": 88,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 22,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 100061.9722962963,
+    "distance": 132,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 22,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 166769.99401599998,
+    "distance": 220,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 1700,
+    "speed": 31.3,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 33353.252000000015,
+    "distance": 62.6,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1700,
+    "speed": 31.3,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 66707.90650000001,
+    "distance": 125.2,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 31.3,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 100061.9722962963,
+    "distance": 187.8,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1700,
+    "speed": 31.3,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 166769.99401599998,
+    "distance": 313,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 1900,
+    "speed": 13.4,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 37277.164000000026,
+    "distance": 26.8,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1900,
+    "speed": 13.4,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 74555.89549999994,
+    "distance": 53.6,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 13.4,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 111833.96903703711,
+    "distance": 80.4,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 13.4,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 186389.99331199966,
+    "distance": 134,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 1900,
+    "speed": 22,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 37277.164000000026,
+    "distance": 44,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1900,
+    "speed": 22,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 74555.89549999994,
+    "distance": 88,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 22,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 111833.96903703711,
+    "distance": 132,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 22,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 186389.99331199966,
+    "distance": 220,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 1900,
+    "speed": 31.3,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 37277.164000000026,
+    "distance": 62.6,
+    "reasons": "Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 1900,
+    "speed": 31.3,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 74555.89549999994,
+    "distance": 125.2,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 31.3,
+    "duration": 6,
+    "feasible": true,
+    "impulse": 111833.96903703711,
+    "distance": 187.8,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 1900,
+    "speed": 31.3,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 186389.99331199966,
+    "distance": 313,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 13.4,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 45124.988000000005,
+    "distance": 26.8,
+    "reasons": "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating). Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 2300,
+    "speed": 13.4,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 90251.87350000002,
+    "distance": 53.6,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 2300,
+    "speed": 13.4,
+    "duration": 6,
+    "feasible": false,
+    "impulse": 135377.96251851856,
+    "distance": 80.4,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 13.4,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 225629.991904,
+    "distance": 134,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 22,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 45124.988000000005,
+    "distance": 44,
+    "reasons": "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating). Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 2300,
+    "speed": 22,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 90251.87350000002,
+    "distance": 88,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 2300,
+    "speed": 22,
+    "duration": 6,
+    "feasible": false,
+    "impulse": 135377.96251851856,
+    "distance": 132,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 22,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 225629.991904,
+    "distance": 220,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 31.3,
+    "duration": 2,
+    "feasible": false,
+    "impulse": 45124.988000000005,
+    "distance": 62.6,
+    "reasons": "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating). Within-flight jerk limit exceeded."
+  },
+  {
+    "mass": 2300,
+    "speed": 31.3,
+    "duration": 4,
+    "feasible": true,
+    "impulse": 90251.87350000002,
+    "distance": 125.2,
+    "reasons": "Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required."
+  },
+  {
+    "mass": 2300,
+    "speed": 31.3,
+    "duration": 6,
+    "feasible": false,
+    "impulse": 135377.96251851856,
+    "distance": 187.8,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  },
+  {
+    "mass": 2300,
+    "speed": 31.3,
+    "duration": 10,
+    "feasible": false,
+    "impulse": 225629.991904,
+    "distance": 313,
+    "reasons": "Insufficient impulse after mandatory completion reserve."
+  }
+]

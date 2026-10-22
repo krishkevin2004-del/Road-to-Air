@@ -1,0 +1,21 @@
+{
+  "mass": 1900,
+  "thrust": 80000,
+  "verticalThrust": 55000,
+  "lateralThrust": 18000,
+  "impulse": 125000,
+  "exhaustVelocity": 500,
+  "reserve": 12000,
+  "futureReserve": 72000,
+  "latency": 0.35,
+  "gravity": 9.81,
+  "maxLoad": 3,
+  "maxJerk": 35,
+  "brake": 7.5,
+  "length": 4.8,
+  "width": 2,
+  "bodyHeight": 1.25,
+  "buffer": 0.3,
+  "laneWidth": 3.7,
+  "dt": 0.02
+}
