@@ -17,7 +17,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 149.7466666666665,
+        "progress": 149.96666666666624,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -205,7 +205,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 148.24249999999992,
+        "progress": 148.21562499999942,
         "failed": true,
         "recoveryFailures": 0,
         "denials": 0,
@@ -240,7 +240,7 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 7.64,
+          "t": 7.6,
           "type": "failure",
           "message": "Occupied-volume contact with LEAD; no traffic was cleared."
         }
@@ -468,7 +468,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 347.7466666666653,
+        "progress": 347.9666666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -636,7 +636,7 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.3066666666653,
+        "progress": 347.5266666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
@@ -1319,7 +1319,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 149.7466666666665,
+        "progress": 149.96666666666624,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -1507,7 +1507,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 148.24249999999992,
+        "progress": 148.21562499999942,
         "failed": true,
         "recoveryFailures": 0,
         "denials": 0,
@@ -1542,7 +1542,7 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 7.64,
+          "t": 7.6,
           "type": "failure",
           "message": "Occupied-volume contact with LEAD; no traffic was cleared."
         }
@@ -1770,7 +1770,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 347.7466666666653,
+        "progress": 347.9666666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -1938,7 +1938,7 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.3066666666653,
+        "progress": 347.5266666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
@@ -2620,7 +2620,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 149.7466666666665,
+        "progress": 149.96666666666624,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -2808,7 +2808,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 148.24249999999992,
+        "progress": 148.21562499999942,
         "failed": true,
         "recoveryFailures": 0,
         "denials": 0,
@@ -2843,7 +2843,7 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 7.64,
+          "t": 7.6,
           "type": "failure",
           "message": "Occupied-volume contact with LEAD; no traffic was cleared."
         }
@@ -3071,7 +3071,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 347.7466666666653,
+        "progress": 347.9666666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -3239,7 +3239,7 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.3066666666653,
+        "progress": 347.5266666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
@@ -3922,7 +3922,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 149.7466666666665,
+        "progress": 149.96666666666624,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -4110,7 +4110,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 148.24249999999992,
+        "progress": 148.21562499999942,
         "failed": true,
         "recoveryFailures": 0,
         "denials": 0,
@@ -4145,7 +4145,7 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 7.64,
+          "t": 7.6,
           "type": "failure",
           "message": "Occupied-volume contact with LEAD; no traffic was cleared."
         }
@@ -4373,7 +4373,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 347.7466666666653,
+        "progress": 347.9666666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -4541,7 +4541,7 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.3066666666653,
+        "progress": 347.5266666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
@@ -5224,7 +5224,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 149.7466666666665,
+        "progress": 149.96666666666624,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -5412,7 +5412,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 148.24249999999992,
+        "progress": 148.21562499999942,
         "failed": true,
         "recoveryFailures": 0,
         "denials": 0,
@@ -5447,7 +5447,7 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 7.64,
+          "t": 7.6,
           "type": "failure",
           "message": "Occupied-volume contact with LEAD; no traffic was cleared."
         }
@@ -5675,7 +5675,7 @@
       "summary": {
         "policy": "Ground braking / route",
         "arrival": null,
-        "progress": 347.7466666666653,
+        "progress": 347.9666666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -5843,7 +5843,7 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.3066666666653,
+        "progress": 347.5266666666654,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,

@@ -6,6 +6,7 @@ import {sampleReplay,frameIndex,landingDescription,matchedCSV} from './replay.js
 import {CASES,responseLabel} from './catalog.js';
 import {analyzeRun,renderAnalysis} from './analysis.js';
 import {initNarrative} from './narrative.js';
+import {initGapSweep} from './gapsweep-view.js';
 const $=id=>document.getElementById(id),escape=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const narrative=initNarrative();let fileBase={...DEFAULT},runs=[],run=null,time=0,playing=false,camera='follow',zoom=1,last=0,raf=0,dirty=false,liveVisible=false,lastHUD=-1,previousEvent=null,pending=false,generation=0,worker=null,cancelWorker=null,computeMs=0,emergencyPreference=true,engine='starting',dirtyInputs=false;
 const performanceData={draws:[],longTasks:0,longTaskAPI:false};
@@ -27,7 +28,7 @@ function compute(options,id){
 }
 async function recompute(){if(!validity())return;const id=++generation;playing=false;last=0;dirtyInputs=false;setBusy(true);status('Calculating matched runs. You can keep scrolling.');
   const options={scenario:$('scenario').value,seed:+$('seed').value,intent:$('intent').value,emergency:$('emergency').checked,consent:$('consent').checked,config:draftConfiguration()};
-  try{const result=await compute(options,id);if(!result||id!==generation)return;runs=result.runs;computeMs=result.computeMs||0;configureResponseOptions();selectPolicy();setBusy(false);status(`Experiment ready · seed ${options.seed} · ${[...$('policy').options].filter(o=>!o.hidden).length} compared responses. Playback pauses when this scene is out of view.`);configureCopy();calculate();const warm=()=>{if(!document.hidden&&!pending){narrative.warm();if(run&&!liveVisible)drawScene($('scene'),sampleReplay(run,time),run,camera,time,zoom);}};if('requestIdleCallback'in window)requestIdleCallback(warm,{timeout:1500});else setTimeout(warm,150);}
+  try{const result=await compute(options,id);if(!result||id!==generation)return;runs=result.runs;computeMs=result.computeMs||0;configureResponseOptions();selectPolicy();setBusy(false);gapSweep?.notify?.();status(`Experiment ready · seed ${options.seed} · ${[...$('policy').options].filter(o=>!o.hidden).length} compared responses. Playback pauses when this scene is out of view.`);configureCopy();calculate();const warm=()=>{if(!document.hidden&&!pending){narrative.warm();if(run&&!liveVisible)drawScene($('scene'),sampleReplay(run,time),run,camera,time,zoom);}};if('requestIdleCallback'in window)requestIdleCallback(warm,{timeout:1500});else setTimeout(warm,150);}
   catch(error){if(id!==generation)return;setBusy(false);status(error.message,true);setText('decision-title','Calculation unavailable');setText('decision-text',error.message);$('run').textContent='Retry experiment ↗';requestPaint();}
 }
 function currentCase(){return CASES[$('situation').value];}
@@ -91,5 +92,7 @@ if('ResizeObserver'in window){const observer=new ResizeObserver(()=>{lastHUD=-1;
 document.addEventListener('visibilitychange',()=>{last=0;if(document.hidden){if(raf)cancelAnimationFrame(raf);raf=0;}else requestPaint();});window.addEventListener('pagehide',e=>{if(!e.persisted){worker?.terminate();if(raf)cancelAnimationFrame(raf);}});
 try{if(PerformanceObserver.supportedEntryTypes?.includes('longtask')){const observer=new PerformanceObserver(list=>{performanceData.longTasks+=list.getEntries().length;});observer.observe({type:'longtask'});performanceData.longTaskAPI=true;}}catch{}
 async function boot(){try{setBusy(true);const response=await fetch('data/vehicle.json');if(!response.ok)throw Error('Vehicle configuration could not load. Start the local server, then reload.');fileBase={...DEFAULT,...await response.json()};for(const [id,value]of Object.entries({mass:fileBase.mass,thrust:fileBase.thrust/1000,impulse:fileBase.impulse/1000,latency:fileBase.latency}))$(id).value=value;$('scenario-settings').open=!matchMedia('(max-width: 760px)').matches;await recompute();}catch(error){setBusy(false);status(error.message,true);$('run').textContent='Retry experiment ↗';}}
+const gapSweep=initGapSweep({getConfig:draftConfiguration,getSeed:()=>+$('seed').value||0,validate:()=>[...document.querySelectorAll('.controls input[type=number]')].every(i=>i.checkValidity())});
+$('gap-stale-run')?.addEventListener('click',()=>$('gap-run').click());
 configureSituation(true);boot();
 window.roadToAir={get runs(){return runs;},get time(){return time;},get camera(){return camera;},get diagnostics(){return {engine,computeMs,renderStats,performanceData,pending,dirtyInputs};}};

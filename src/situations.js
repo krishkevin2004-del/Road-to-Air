@@ -38,14 +38,17 @@ export function selectBrakeCandidate(origin,t,c,ledger,gap,onset=5,kind='emergen
  }
  return {...selected,attempts};
 }
+// A sweep may override the scripted following gap; anything outside a sane range is rejected, not clamped.
+function checkedGap(g){if(!Number.isFinite(+g)||+g<1||+g>100)throw Error('Following gap must be between 1 and 100 m');return +g;}
 export function simulateBrake(options={}){
- const {scenario='brake',seed=42,policy='coordinated',intent='emergency',consent=true}=options,c=vehicle(options.config),r=resources(c),ego=body(c),gap=scenario==='priorUse'?20:scenario==='brakeTight'?8:32,eventTime=scenario==='priorUse'?14:5,random=rng(+seed),events=[],frames=[],requests=[];
+ const {scenario='brake',seed=42,policy='coordinated',intent='emergency',consent=true}=options,c=vehicle(options.config),r=resources(c),ego=body(c),gap=options.gap!==undefined?checkedGap(options.gap):scenario==='priorUse'?20:scenario==='brakeTight'?8:32,eventTime=scenario==='priorUse'?14:5,random=rng(+seed),events=[],frames=[],requests=[];
  const adjacent=[];for(let lane of [0,7.4])for(let i=0;i<7;i++)adjacent.push({id:`ADJ${lane}-${i}`,x:-150+i*65+random()*12,y:lane,z:0,v:20+random()*3,length:4.7,width:1.9,height:1.5});
  const leadAt=t=>leadPose(t,c,gap,eventTime),traffic=t=>[leadAt(t),...adjacent.map(v=>({...v,x:v.x+v.v*t}))];let steering=null;let flight=null,failed=false,arrival=null,requested=false,onset=false,observed=false,denials=0,overlaps=0,airFailure=false,optionalDone=false;
  const log=(t,type,message)=>events.push({t:+t.toFixed(4),type,message});log(0,'baseline',`Synthetic sudden-braking event: ${gap} m initial bumper gap, both cars 22 m/s. B1 unchanged.`);
  function attempt(t,kind){const candidate=selectBrakeCandidate(ego,t,c,r,gap,eventTime,kind),q=candidate.q,f=candidate.screen,gate=candidate.gate,reasons=[...candidate.reasons];if(kind==='optional'&&!consent)reasons.push('Consent to spend future allocation is disabled.');if(kind==='optional'&&policy==='reserve'&&r.impulse-f.impulse-c.reserve<c.futureReserve)reasons.push('Preserve the future emergency allocation.');if(flight)reasons.push('Already airborne; a second departure cannot be stacked.');
  const accepted=!reasons.length;requests.push({t,kind,accepted,impulse:f.impulse,duration:q.duration,request:q,origin:{...ego},reasons:accepted?[gate.reason]:reasons,landing:{t:t+q.duration,x:ego.x+q.speed*q.duration,y:ego.y,uncertainty:q.speed*c.latency},screen:f,trafficScreen:gate,candidateSearch:candidate.attempts,groundGap:leadAt(t).x-ego.x-(ego.length+4.7)/2});log(t,accepted?'approved':'denied',`${kind}: ${accepted?`Selected ${q.duration.toFixed(2)} s / 3 m apex from ${candidate.attempts.length} candidate(s). ${gate.reason}`:reasons.join(' ')}`);if(accepted){flight={start:t,origin:{...ego},request:q};ego.mode='departure';}else denials++;}
- for(let step=0;step<=Math.round(28/c.dt);step++){const t=step*c.dt,prev={...ego};
+ const horizon=options.horizon===undefined?28:Math.min(28,Math.max(12,+options.horizon)),lean=options.lean===true;// lean: no replay frames, shorter horizon; outcomes are decided well before 12 s
+ for(let step=0;step<=Math.round(horizon/c.dt);step++){const t=step*c.dt,prev={...ego};
   if(!onset&&t>=eventTime){onset=true;log(t,'hazard-onset','Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion.');}
   if(!optionalDone&&t>=1){optionalDone=true;if(['optional','reserve'].includes(policy))attempt(t,'optional');}
   if(!observed&&t>=eventTime+c.latency){observed=true;log(t,'disturbance',`Braking is observed after ${c.latency.toFixed(2)} s configured response latency (quantized to physics steps).`);}
@@ -55,11 +58,12 @@ export function simulateBrake(options={}){
   if(step&&!failed){if(flight&&t-flight.start>c.dt/2){const age=t-flight.start,q=flight.request,force=c.mass*(c.gravity+vertical(age-c.dt/2,q.duration,q.height).a),cost=force*c.dt;
    if(force<0||force>c.verticalThrust||force>thrustCap(c,r)||cost>r.impulse||c.dt>r.air+1e-8){failed=airFailure=true;ego.mode='failed';log(t,'failure','Runtime support force or resource limit exceeded.');}
    else{consume(r,cost,c.dt,c);ego.x+=ego.v*c.dt;const z=vertical(age,q.duration,q.height);ego.z=z.p;ego.vz=z.v;ego.mode=age<.35?'departure':age>q.duration-.35?'touchdown':'airborne';if(age+1e-8>=q.duration){ego.z=0;ego.vz=0;ego.mode='recovery';log(t,'landed','Nominal vertical touchdown reached; forward speed is continuous.');flight=null;}}}
-   else if(!flight){advance(ego,observed&&leadAt(t).x>ego.x?-c.brake:0,c.dt);ego.mode='ground';}
+   else if(!flight){if(observed&&leadAt(t).x>ego.x){const coast=Math.max(0,Math.min(c.dt,eventTime+c.latency-(t-c.dt)));// braking begins exactly one configured latency after onset, not at the next 20 ms tick
+    if(coast>1e-12)ego.x+=ego.v*coast;advance(ego,-c.brake,c.dt-coast);}else advance(ego,0,c.dt);ego.mode='ground';}
    for(const car of traffic(t))if(sweptOverlap(prev,ego,traffic(Math.max(0,t-c.dt)).find(v=>v.id===car.id),car,c,0)){failed=true;ego.mode='failed';overlaps++;log(t,'failure',`Occupied-volume contact with ${car.id}; no traffic was cleared.`);break;}
   }
   if(!failed&&arrival===null&&ego.x>=500){arrival=t;log(t,'destination','Local x=500 m destination reached.');}
-  if(step%Math.max(1,Math.round(.1/c.dt))===0||events.at(-1)?.t===+t.toFixed(4))frames.push({t:+t.toFixed(4),ego:{...ego},traffic:traffic(t),resources:{...r},active:flight?{...flight,correction:null}:null});
+  if(!lean&&(step%Math.max(1,Math.round(.1/c.dt))===0||events.at(-1)?.t===+t.toFixed(4)))frames.push({t:+t.toFixed(4),ego:{...ego},traffic:traffic(t),resources:{...r},active:flight?{...flight,correction:null}:null});
  }
  return {version:'0.8.0',baseline:BASELINE,config:c,options:{...options,scenario,seed:+seed,policy,intent,emergency:true},frames,events,requests,study:{type:'brake',onset:eventTime,leadBrake:8,initialGap:gap,entrySpeed:22,observationTime:events.find(e=>e.type==='disturbance')?.t,groundStopMargin:gap+22**2/(2*8)-(22*c.latency+22**2/(2*c.brake)),steering},summary:{policy:names[policy],arrival,progress:ego.x,failed,recoveryFailures:airFailure?1:0,denials,hardBrakes:observed?2:0,overlaps,airUsed:r.usedAir,impulseUsed:r.usedImpulse,remainingImpulse:r.impulse,remainingAir:r.air,backgroundDistance:traffic(28).reduce((s,v)=>s+v.x,0)-traffic(0).reduce((s,v)=>s+v.x,0),classification:failed?'Failed occupied-volume run':'Synthetic translational comparison; safety unresolved'}};
 }

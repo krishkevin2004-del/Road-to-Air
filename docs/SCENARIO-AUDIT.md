@@ -32,3 +32,7 @@ Emergency braking cards show contact outcome rather than leading with “destina
 The original late-hazard sequence could overlap the recreation flight. It is replaced by a 1 s recreation request, 5.6 s touchdown and 14 s hazard. This separates already completed consumption from a second departure while still airborne. The 20 m gap is a registered synthetic input; it allows testing resource availability while keeping ground braking as a viable comparison. No traffic is cleared and B1 is unchanged.
 
 58 automated checks pass. Browser verification exercises all twelve public combinations and confirms the relevant response counts (2 / 3 / 2 / 1 by situation), populated decision reports and no invalid numerical text. These are diagnostic checks, not safety validation.
+
+## Gap sweep (v0.9)
+
+Section 06 of the page replays the sudden-braking event (22 m/s, lead braking at 8 m/s²) for every initial gap from 4 m up to 10 m beyond the braking boundary, once with ground braking and once with an aerial request. Each cell is a full engine replay (`lean` mode: no replay frames, 14 s horizon, verified identical to the full run), not a formula. The replay now starts braking exactly one configured latency after onset, so contact in the replay agrees with the analytical stopping margin at every gap. At default assumptions: contact in both responses at 4-5.5 m, a flight avoids the contact braking cannot at 6-9.5 m (2.6-3.6 s, 48-67 kN·s), and braking suffices from 10 m. Tests: `tests/gapsweep.test.js`.
