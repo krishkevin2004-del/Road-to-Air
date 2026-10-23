@@ -33,6 +33,8 @@ The menu is curated rather than a free combination of traffic events, intents an
 
 There are **12 public combinations**, each run across five seeds in `results/curated-combinations.json` and `.csv`. Early/late cut-in tests, reduced-thrust stress presets, arbitrary intent combinations and duplicate forecast/reserve choices are removed from the public menu. The adversarial engine fixtures remain available to automated tests. See `docs/SCENARIO-AUDIT.md` for the rationale and actual findings.
 
+The sudden-braking and recreation situations have a **travel speed** control: 49 mph (22 m/s, default) or 70 mph (31.3 m/s). Replays show only about 3.5 s before the (planned) liftoff to 3.5 s after touchdown rather than all 28 simulated seconds; the simulation still runs to 28 s so arrival times and route comparisons are unchanged.
+
 Result cards match the question: contact outcome for braking, impulse available at the emergency decision for recreation, and connector arrival for route transfer. Reasons for use are shown rather than freely mixed with unrelated situations. The intention tabs take you to the corresponding curated situation.
 
 Play, seek, step, change speed, switch camera or zoom. Event buttons inspect actual timestamps. Cameras never change physics. Mobile settings collapse initially, and the page supports reduced motion.
@@ -70,13 +72,15 @@ B1 is compressed nitrogen, at most ten cumulative airborne seconds per full reso
 
 ## Verification and limits
 
-70 automated checks pass. They cover analytical motion, force allocation, resource conservation, refill, collisions, successful and failed recovery, seeded reproduction, timestep convergence, replay, cameras, new brake-onset continuity and latency, matched lead demand, highway endpoint velocities, force integration, immutable denial and report distinctions. The current audit runs all 12 offered combinations across five seeds (60 runs), plus 36 envelope points. `results/paired-runs.*` are the retained historical v0.6 technical batch and are not the current public catalog. Seeds are synthetic variation, not a statistical safety dataset.
+73 automated checks pass. They cover analytical motion, force allocation, resource conservation, refill, collisions, successful and failed recovery, seeded reproduction, timestep convergence, replay, cameras, new brake-onset continuity and latency, matched lead demand, highway endpoint velocities, force integration, immutable denial and report distinctions. The current audit runs all 12 offered combinations across five seeds (60 runs), plus 36 envelope points. `results/paired-runs.*` are the retained historical v0.6 technical batch and are not the current public catalog. Seeds are synthetic variation, not a statistical safety dataset.
 
 The original car artwork now has a lower canopy, sculpted body surfaces, slim lights, a splitter, turbine wheels and detailed brakes. The simulation Roadster uses a shared tapered sports-car mesh in both road renderers. These are display changes inside the unchanged physical dimensions, not new vehicle specifications.
 
 This is a translational model. Attitude, nozzle torque/control, plume footprint, pressure thermodynamics, real sensors, weather and road law remain unresolved. The new adjacent/bridge flows use constant-speed demand, not calibrated driver reactions. No complete highway route graph or conventional-interchange detour time is implemented. Steering remains a screen. A successful heading-changing flight is not implemented: the elevated-highway request is explicitly denied. See `docs/MODEL.md`, `docs/CHANGES-v0.6.md` and `docs/VERIFICATION.md` for details.
 
 ### v0.9: where the flight helps
+**Read this first:** wherever the flight beats braking, the following gap is a tailgating distance. At 49 mph the window is 6 to 9.5 m, which is 0.27 to 0.43 s behind the lead car (the common two-second rule is 44 m). At 70 mph the window is 6 to 15 m, 0.19 to 0.48 s (two seconds would be 62.6 m). The study shows what the hardware could do in that situation, not that following that closely is sensible.
+
 The sudden-braking search now escalates to faster climbs when gentle hops cannot clear a close lead vehicle. At the 8 m gap braking has a −1.72 m stopping margin and records contact, while a 3.2 s, 3 m hop (1.95 g, 17.5 m/s³, 59.6 kN·s plus the 12 kN·s reserve) clears the lead roof by 0.94 m with no modeled contact. Section 06 of the page sweeps every gap from 4 m (up to 10 m beyond the braking boundary, which follows the engineering assumptions): contact in both responses at 4–5.5 m, a flight rescue at 6–9.5 m, braking sufficient from 10 m. Each cell is a full engine replay (`lean` mode, verified identical to the full replay), not a formula. The replay's braking onset was made exact so contact agrees with the analytical margin at every gap. Point-mass result: attitude, jet plume on the vehicle below and sensing uncertainty are not modeled. See `docs/CHANGES-v0.9.md`.
 
 ### v0.8: search before denial

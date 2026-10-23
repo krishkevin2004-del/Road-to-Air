@@ -32,3 +32,21 @@ test('invalid inputs are rejected, not clamped',async()=>{
  assert.throws(()=>simulate({scenario:'brake',gap:0.5}),/between 1 and 100/);assert.throws(()=>simulate({scenario:'brake',gap:NaN}),/between 1 and 100/);assert.throws(()=>simulate({scenario:'brake',gap:500}),/between 1 and 100/);
 });
 test('sweep is deterministic',()=>{assert.deepEqual(sweepRow(8,{},42),sweepRow(8,{},42));});
+import {replayWindow} from '../src/replay.js';
+import {matched} from '../src/simulation.js';
+const V70=31.29;
+test('70 mph (31.29 m/s): stopping math, boundary and a rescue window',async()=>{
+ const edge=brakingBoundary({},V70);assert.ok(Math.abs(edge-(V70*.35+V70**2/15-V70**2/16))<1e-9);assert.ok(Math.abs(edge-15)<.05,'boundary near 15 m');
+ const rows=await runGapSweep({},{speed:V70});for(const r of rows)assert.equal(r.groundContact,r.margin<0,`gap ${r.gap}`);
+ const b=bands(rows);assert.deepEqual(b.map(x=>x.cls),['unavoidable','rescue','unneeded']);assert.ok(rows.every(r=>r.cls!=='anomaly'));
+ const t=summarize(rows,{},V70).join(' ');assert.match(t,/tailgating/);assert.match(t,/70 mph/);
+});
+test('speed is validated and flows through the replay',()=>{
+ assert.throws(()=>simulate({scenario:'brake',speed:5}),/between 10 and 40/);assert.throws(()=>simulate({scenario:'brake',speed:NaN}),/between 10 and 40/);
+ const r=simulate({scenario:'brake',policy:'ground',speed:V70});assert.equal(r.study.entrySpeed,V70);assert.ok(Math.abs(r.frames[0].ego.v-V70)<1e-9);assert.ok(Math.abs(r.study.groundStopMargin-(32+V70**2/16-(V70*.35+V70**2/15)))<1e-9);
+});
+test('replay window is ~3.5 s before liftoff and after landing, never outside 0-28 s',()=>{
+ const vis=o=>matched(o).filter(r=>['ground','coordinated'].includes(r.options.policy));const w=replayWindow(vis({scenario:'brake',seed:42}));assert.ok(Math.abs(w.start-(5.36-3.5))<.15&&Math.abs(w.end-(9.76+3.5))<.15,JSON.stringify(w));
+ for(const sc of ['brakeTight','priorUse','exit','exitBlocked','highway']){const x=replayWindow(vis({scenario:sc,seed:42}));assert.ok(x.start>=0&&x.end<=28&&x.end-x.start>=2,sc+JSON.stringify(x));}
+ assert.deepEqual(replayWindow([{requests:[]}]),{start:0,end:28});
+});

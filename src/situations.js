@@ -4,20 +4,20 @@ import {feasibility,sweptOverlap} from './physics.js';
 export const BRAKE_EVENT=Object.freeze({onset:5,leadBrake:8,entrySpeed:22,normalGap:32,tightGap:8,duration:4,apex:3});
 export const HIGHWAY=Object.freeze({requestTime:5,north:170,east:60,deck:6,duration:4.6,entrySpeed:22});
 const names={ground:'Ground braking / route',coordinated:'Request aerial assistance',optional:'Use now, then face emergency',reserve:'Preserve future capability',onboard:'Onboard forecast comparator'};
-const body=c=>({id:'R',x:0,y:3.7,z:0,v:22,vz:0,vy:0,a:0,length:c.length,width:c.width,height:c.bodyHeight,mode:'ground'});
+const body=(c,speed=22)=>({id:'R',x:0,y:3.7,z:0,v:speed,vz:0,vy:0,a:0,length:c.length,width:c.width,height:c.bodyHeight,mode:'ground'});
 function advance(v,a,dt){const sub=a<0?Math.min(dt,v.v/-a):dt;v.x+=v.v*sub+.5*a*sub**2;v.v=Math.max(0,v.v+a*dt);}
-export function leadPose(t,c,gap,onset=BRAKE_EVENT.onset){const age=Math.max(0,t-onset),sub=Math.min(age,22/BRAKE_EVENT.leadBrake);return {id:'LEAD',x:(c.length+4.7)/2+gap+22*Math.min(t,onset)+22*sub-.5*BRAKE_EVENT.leadBrake*sub**2,y:3.7,z:0,v:Math.max(0,22-8*age),length:4.7,width:1.9,height:1.5};}
+export function leadPose(t,c,gap,onset=BRAKE_EVENT.onset,v0=22){const age=Math.max(0,t-onset),sub=Math.min(age,v0/BRAKE_EVENT.leadBrake);return {id:'LEAD',x:(c.length+4.7)/2+gap+v0*Math.min(t,onset)+v0*sub-.5*BRAKE_EVENT.leadBrake*sub**2,y:3.7,z:0,v:Math.max(0,v0-8*age),length:4.7,width:1.9,height:1.5};}
 export function emergencyGate(q,origin,t,c,gap,onset=5){
  let prior={...origin},conflict=null,minRoofClearance=Infinity;
  for(let a=.02;a<=q.duration+.6+1e-8;a+=.02){
-  const next={...origin,x:origin.x+q.speed*a,z:vertical(Math.min(a,q.duration),q.duration,q.height).p},lead=leadPose(t+a,c,gap,onset);
+  const next={...origin,x:origin.x+q.speed*a,z:vertical(Math.min(a,q.duration),q.duration,q.height).p},lead=leadPose(t+a,c,gap,onset,origin.v);
   if(Math.abs(next.x-lead.x)<(origin.length+lead.length)/2&&Math.abs(next.y-lead.y)<(origin.width+lead.width)/2)minRoofClearance=Math.min(minRoofClearance,next.z-lead.height);
-  if(!conflict&&sweptOverlap(prior,next,leadPose(t+a-.02,c,gap,onset),lead,c,.7))conflict={t:t+a,age:a,bottom:next.z};
+  if(!conflict&&sweptOverlap(prior,next,leadPose(t+a-.02,c,gap,onset,origin.v),lead,c,.7))conflict={t:t+a,age:a,bottom:next.z};
   prior=next;
  }
  const details={requiredClearance:.7,minRoofClearance:Number.isFinite(minRoofClearance)?minRoofClearance:null,firstConflict:conflict};
  if(conflict)return {ok:false,reason:'Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer).',...details};
- const landX=origin.x+q.speed*q.duration,lead=leadPose(t+q.duration,c,gap,onset),distance=lead.x-landX-(origin.length+lead.length)/2,need=2+q.speed*c.latency+Math.max(0,(q.speed**2-lead.v**2)/(2*c.brake));
+ const landX=origin.x+q.speed*q.duration,lead=leadPose(t+q.duration,c,gap,onset,origin.v),distance=lead.x-landX-(origin.length+lead.length)/2,need=2+q.speed*c.latency+Math.max(0,(q.speed**2-lead.v**2)/(2*c.brake));
  if(lead.x>landX&&distance<need)return {ok:false,reason:`Landing recovery gap ${distance.toFixed(1)} m is below ${need.toFixed(1)} m required.`,...details};
  return {ok:true,reason:'Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.',...details};
 }
@@ -39,12 +39,13 @@ export function selectBrakeCandidate(origin,t,c,ledger,gap,onset=5,kind='emergen
  return {...selected,attempts};
 }
 // A sweep may override the scripted following gap; anything outside a sane range is rejected, not clamped.
+function checkedSpeed(v){if(!Number.isFinite(+v)||+v<10||+v>40)throw Error('Travel speed must be between 10 and 40 m/s');return +v;}
 function checkedGap(g){if(!Number.isFinite(+g)||+g<1||+g>100)throw Error('Following gap must be between 1 and 100 m');return +g;}
 export function simulateBrake(options={}){
- const {scenario='brake',seed=42,policy='coordinated',intent='emergency',consent=true}=options,c=vehicle(options.config),r=resources(c),ego=body(c),gap=options.gap!==undefined?checkedGap(options.gap):scenario==='priorUse'?20:scenario==='brakeTight'?8:32,eventTime=scenario==='priorUse'?14:5,random=rng(+seed),events=[],frames=[],requests=[];
+ const {scenario='brake',seed=42,policy='coordinated',intent='emergency',consent=true}=options,c=vehicle(options.config),speed=options.speed===undefined?22:checkedSpeed(options.speed),r=resources(c),ego=body(c,speed),gap=options.gap!==undefined?checkedGap(options.gap):scenario==='priorUse'?20:scenario==='brakeTight'?8:32,eventTime=scenario==='priorUse'?14:5,random=rng(+seed),events=[],frames=[],requests=[];
  const adjacent=[];for(let lane of [0,7.4])for(let i=0;i<7;i++)adjacent.push({id:`ADJ${lane}-${i}`,x:-150+i*65+random()*12,y:lane,z:0,v:20+random()*3,length:4.7,width:1.9,height:1.5});
- const leadAt=t=>leadPose(t,c,gap,eventTime),traffic=t=>[leadAt(t),...adjacent.map(v=>({...v,x:v.x+v.v*t}))];let steering=null;let flight=null,failed=false,arrival=null,requested=false,onset=false,observed=false,denials=0,overlaps=0,airFailure=false,optionalDone=false;
- const log=(t,type,message)=>events.push({t:+t.toFixed(4),type,message});log(0,'baseline',`Synthetic sudden-braking event: ${gap} m initial bumper gap, both cars 22 m/s. B1 unchanged.`);
+ const leadAt=t=>leadPose(t,c,gap,eventTime,speed),traffic=t=>[leadAt(t),...adjacent.map(v=>({...v,x:v.x+v.v*t}))];let steering=null;let flight=null,failed=false,arrival=null,requested=false,onset=false,observed=false,denials=0,overlaps=0,airFailure=false,optionalDone=false;
+ const log=(t,type,message)=>events.push({t:+t.toFixed(4),type,message});log(0,'baseline',`Synthetic sudden-braking event: ${gap} m initial bumper gap, both cars ${speed.toFixed(1)} m/s (${(speed/.44704).toFixed(0)} mph). B1 unchanged.`);
  function attempt(t,kind){const candidate=selectBrakeCandidate(ego,t,c,r,gap,eventTime,kind),q=candidate.q,f=candidate.screen,gate=candidate.gate,reasons=[...candidate.reasons];if(kind==='optional'&&!consent)reasons.push('Consent to spend future allocation is disabled.');if(kind==='optional'&&policy==='reserve'&&r.impulse-f.impulse-c.reserve<c.futureReserve)reasons.push('Preserve the future emergency allocation.');if(flight)reasons.push('Already airborne; a second departure cannot be stacked.');
  const accepted=!reasons.length;requests.push({t,kind,accepted,impulse:f.impulse,duration:q.duration,request:q,origin:{...ego},reasons:accepted?[gate.reason]:reasons,landing:{t:t+q.duration,x:ego.x+q.speed*q.duration,y:ego.y,uncertainty:q.speed*c.latency},screen:f,trafficScreen:gate,candidateSearch:candidate.attempts,groundGap:leadAt(t).x-ego.x-(ego.length+4.7)/2});log(t,accepted?'approved':'denied',`${kind}: ${accepted?`Selected ${q.duration.toFixed(2)} s / 3 m apex from ${candidate.attempts.length} candidate(s). ${gate.reason}`:reasons.join(' ')}`);if(accepted){flight={start:t,origin:{...ego},request:q};ego.mode='departure';}else denials++;}
  const horizon=options.horizon===undefined?28:Math.min(28,Math.max(12,+options.horizon)),lean=options.lean===true;// lean: no replay frames, shorter horizon; outcomes are decided well before 12 s
@@ -65,7 +66,7 @@ export function simulateBrake(options={}){
   if(!failed&&arrival===null&&ego.x>=500){arrival=t;log(t,'destination','Local x=500 m destination reached.');}
   if(!lean&&(step%Math.max(1,Math.round(.1/c.dt))===0||events.at(-1)?.t===+t.toFixed(4)))frames.push({t:+t.toFixed(4),ego:{...ego},traffic:traffic(t),resources:{...r},active:flight?{...flight,correction:null}:null});
  }
- return {version:'0.8.0',baseline:BASELINE,config:c,options:{...options,scenario,seed:+seed,policy,intent,emergency:true},frames,events,requests,study:{type:'brake',onset:eventTime,leadBrake:8,initialGap:gap,entrySpeed:22,observationTime:events.find(e=>e.type==='disturbance')?.t,groundStopMargin:gap+22**2/(2*8)-(22*c.latency+22**2/(2*c.brake)),steering},summary:{policy:names[policy],arrival,progress:ego.x,failed,recoveryFailures:airFailure?1:0,denials,hardBrakes:observed?2:0,overlaps,airUsed:r.usedAir,impulseUsed:r.usedImpulse,remainingImpulse:r.impulse,remainingAir:r.air,backgroundDistance:traffic(28).reduce((s,v)=>s+v.x,0)-traffic(0).reduce((s,v)=>s+v.x,0),classification:failed?'Failed occupied-volume run':'Synthetic translational comparison; safety unresolved'}};
+ return {version:'0.8.0',baseline:BASELINE,config:c,options:{...options,scenario,seed:+seed,policy,intent,emergency:true},frames,events,requests,study:{type:'brake',onset:eventTime,leadBrake:8,initialGap:gap,entrySpeed:speed,observationTime:events.find(e=>e.type==='disturbance')?.t,groundStopMargin:gap+speed**2/(2*8)-(speed*c.latency+speed**2/(2*c.brake)),steering},summary:{policy:names[policy],arrival,progress:ego.x,failed,recoveryFailures:airFailure?1:0,denials,hardBrakes:observed?2:0,overlaps,airUsed:r.usedAir,impulseUsed:r.usedImpulse,remainingImpulse:r.impulse,remainingAir:r.air,backgroundDistance:traffic(28).reduce((s,v)=>s+v.x,0)-traffic(0).reduce((s,v)=>s+v.x,0),classification:failed?'Failed occupied-volume run':'Synthetic translational comparison; safety unresolved'}};
 }
 // Quintic Hermite boundary-value profile: specified positions, velocities and zero endpoint acceleration.
 export function boundary(t,T,d,v0=0,v1=0){const u=Math.max(0,Math.min(1,t/T)),a1=v0*T,A=d-a1,B=v1*T-a1,a3=10*A-4*B,a4=-15*A+7*B,a5=6*A-3*B;return {p:a1*u+a3*u**3+a4*u**4+a5*u**5,v:(a1+3*a3*u*u+4*a4*u**3+5*a5*u**4)/T,a:(6*a3*u+12*a4*u*u+20*a5*u**3)/T**2};}

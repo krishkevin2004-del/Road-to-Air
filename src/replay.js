@@ -5,3 +5,7 @@ export function landingDescription(run,time){if(run.study?.type==='highway')retu
 export function storyState(progress){const p=Math.max(0,Math.min(1,progress));return {progress:p,time:4+6.2*p,phase:p<.2?0:p<.46?1:p<.79?2:3};}
 export const csvCell=value=>'"'+String(value??'').replaceAll('"','""')+'"';
 export function matchedCSV(runs){const keys=[...new Set(runs.flatMap(r=>Object.keys(r.summary)))];return [keys.map(csvCell).join(','),...runs.map(r=>keys.map(k=>csvCell(r.summary[k])).join(','))].join('\n');}
+
+// Replay window: about 3.5 s before the earliest liftoff (or request) and 3.5 s after the latest touchdown (or planned
+// touchdown). The simulation still runs to its 28 s horizon so arrival-time comparisons are unchanged.
+export function replayWindow(runs,margin=3.5,horizon=28){const ts=runs.flatMap(r=>r.requests).flatMap(q=>[q.t,q.landing?.t]).filter(Number.isFinite);if(!ts.length)return {start:0,end:horizon};const start=Math.max(0,Math.floor((Math.min(...ts)-margin)*10)/10),end=Math.min(horizon,Math.ceil((Math.max(...ts)+margin)*10)/10);return end-start>=2?{start,end}:{start:0,end:horizon};}
