@@ -16,7 +16,8 @@ function chart(rows,edge,selected,speed){
  for(let g=Math.ceil(g0/every)*every;g<=rows.at(-1).gap+1e-9;g+=every)svg+=`<text x="${x(g)+w/2}" y="${axisY+38}" text-anchor="middle" fill="#7d8872" font-size="11">${(g/speed).toFixed(2)} s</text>`;
  svg+=`<text x="${L-14}" y="${axisY+38}" text-anchor="end" fill="#7d8872" font-size="11">following time</text>`;
  svg+=`<text x="${L+pw/2}" y="${H-4}" text-anchor="middle" fill="#a2a79b" font-size="13">Initial bumper gap to the lead vehicle (m) · both cars at ${f(speed)} m/s (${f(speed*2.23694,0)} mph) · lead brakes at 8 m/s²</text>`;
- if(edge>=g0&&edge<=rows.at(-1).gap+step)svg+=`<line x1="${x(edge)+w/2}" x2="${x(edge)+w/2}" y1="${T-10}" y2="${axisY-4}" stroke="#f1f1eb" stroke-dasharray="4 4"/><text x="${x(edge)+w/2}" y="${T-18}" text-anchor="middle" fill="#f1f1eb" font-size="13">braking margin = 0 at ${f(edge)} m</text>`;
+ if(edge>=g0&&edge<=rows.at(-1).gap+step){const ex=x(edge)+w/2,anchor=ex>W-280?'end':'start';svg+=`<line x1="${ex}" x2="${ex}" y1="${T-10}" y2="${axisY-4}" stroke="#f1f1eb" stroke-dasharray="4 4"/><text x="${anchor==='start'?ex+8:ex-8}" y="${T-18}" text-anchor="${anchor}" fill="#f1f1eb" font-size="13">braking margin = 0 at ${f(edge)} m</text>`;}
+ if(8>=g0&&8<=rows.at(-1).gap){const cx=x(8)+w/2;svg+=`<path d="M${cx-6} ${T-20} L${cx+6} ${T-20} L${cx} ${T-10} Z" fill="#e3cfa5"/><text x="${cx-10}" y="${T-18}" text-anchor="end" fill="#e3cfa5" font-size="13">8 m critical-gap replay</text>`;}
  const sx=x(rows[selected].gap);svg+=`<rect id="gap-marker" x="${sx-1.5}" y="${T-6}" width="${w+3}" height="${rowsDef.length*(rowH+gapY)}" fill="none" stroke="#f1f1eb" stroke-width="2" pointer-events="none"/>`;
  return svg+'</svg>';
 }
