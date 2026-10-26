@@ -30,7 +30,7 @@ test('bounded search finds a buffered overflight instead of rejecting only the f
  assert.ok(q.trafficScreen.minRoofClearance>.7);assert.equal(q.trafficScreen.requiredClearance,.7);
  assert.equal(r.summary.failed,false);assert.equal(r.summary.overlaps,0);
  close(r.summary.airUsed,4.4);assert.ok(r.summary.remainingImpulse>=r.config.reserve);
- assert.ok(r.events.some(e=>e.type==='landed'&&Math.abs(e.t-9.76)<.001));
+ assert.ok(r.events.some(e=>e.type==='landed'&&Math.abs(e.t-9.75)<.001));
  assert.match(analyzeRun(r).title,/Jump feasible/);
 });
 test('search cannot bypass gas shortage or modify the lead trajectory',()=>{
@@ -39,3 +39,8 @@ test('search cannot bypass gas shortage or modify the lead trajectory',()=>{
  const ground=simulate({scenario:'brake',policy:'ground'}),air=simulate({scenario:'brake',policy:'coordinated'});
  for(const a of ground.frames){const b=air.frames.find(f=>f.t===a.t);if(b)assert.deepEqual(a.traffic,b.traffic);}
 });
+// Regression tests for the external audit (departure timing, timestep sensitivity, sampled peaks, transition jerk).
+test('departure is screened from where the car actually is at the decision instant',()=>{for(const speed of [22,26.8224])for(const scenario of ['brake','brakeTight']){const r=simulate({scenario,policy:'coordinated',speed}),q=r.requests[0];close(q.t,5.35,1e-9);close(q.origin.x,speed*q.t,1e-6);}});
+test('decisions, durations and clearances do not depend on the physics timestep',()=>{for(const speed of [22,26.8224])for(const scenario of ['brake','brakeTight']){const runs=[.02,.01,.005].map(dt=>simulate({scenario,policy:'coordinated',speed,config:{dt}}));const ref=runs[0].requests[0];for(const r of runs){const q=r.requests[0];assert.equal(q.accepted,ref.accepted);assert.equal(q.duration,ref.duration);assert.ok(Math.abs(q.trafficScreen.minRoofClearance-ref.trafficScreen.minRoofClearance)<.005);assert.equal(r.summary.failed,runs[0].summary.failed);assert.ok(Math.abs(r.summary.impulseUsed-runs[0].summary.impulseUsed)<200);}}});
+test('reported roof clearance matches an independent continuous-geometry check',async()=>{const {leadPose}=await import('../src/situations.js');const {vehicle,vertical}=await import('../src/model.js');const c=vehicle({});for(const speed of [22,26.8224]){const r=simulate({scenario:'brakeTight',policy:'coordinated',speed}),q=r.requests[0];let min=Infinity;for(let a=0;a<=q.duration;a+=1e-4){const L=leadPose(q.t+a,c,8,5,speed);if(Math.abs(speed*(q.t+a)-L.x)<(4.8+4.7)/2)min=Math.min(min,vertical(a,q.duration,3).p-1.5);}assert.ok(Math.abs(q.trafficScreen.minRoofClearance-min)<.005,`${q.trafficScreen.minRoofClearance} vs ${min}`);}});
+test('screened peaks equal the analytic endpoint values; transition step is reported',async()=>{const {feasibility}=await import('../src/physics.js');const T=3.2,h=3,f=feasibility({speed:26.8224,duration:T,height:h});close(f.peakLoad,(9.81+32*h/T**2)/9.81,1e-6);close(f.peakVertical,1900*(9.81+32*h/T**2),1e-3);assert.ok(Math.abs(f.peakJerk-192*h/T**3)<.01);close(f.transitionStep,32*h/T**2,1e-9);});

@@ -1,3 +1,5 @@
+> Numbers in this note were superseded by the timing fix in `CHANGES-v0.10.md`.
+
 # v0.9 · Where the flight helps
 
 - **Rapid-climb search.** Braking requests still try gentle 4.0-5.0 s hops first. If none passes, the search tries 2.4-3.8 s climbs at the same 3 m apex under the same 3 g, 35 m/s³, thrust, impulse, 0.70 m clearance and recovery gates. At the 8 m gap this selects a 3.2 s hop (1.95 g, 17.5 m/s³, 59.6 kN·s plus the 12 kN·s reserve, 0.94 m roof clearance) that completes with no modeled contact while ground braking records contact. The 32 m result is unchanged (4.4 s, 82.0 kN·s).

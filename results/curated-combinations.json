@@ -42,9 +42,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -65,17 +65,17 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.399999999999994,
-        "impulseUsed": 82011.17175056352,
-        "remainingImpulse": 42988.82824943672,
-        "remainingAir": 5.600000000000094,
+        "airUsed": 4.399999999999907,
+        "impulseUsed": 82011.17321050314,
+        "remainingImpulse": 42988.8267894972,
+        "remainingAir": 5.600000000000092,
         "backgroundDistance": 8548.553087801673,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -91,9 +91,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -101,24 +101,24 @@
           "message": "Current bumper gap 31.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 4.40 s / 3 m apex from 3 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 9.76,
+          "t": 9.75,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 82011.49293764081,
@@ -131,7 +131,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -147,8 +147,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.760000000000002,
-            "x": 214.27999999999963,
+            "t": 9.75,
+            "x": 214.4999999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -156,7 +156,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.8917713817362176,
+            "minRoofClearance": 0.9076261197151831,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -165,7 +165,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.36472367999999533,
+              "clearance": 0.38642805187499984,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -175,7 +175,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.6549128850633181,
+              "clearance": 0.6737493960849643,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -185,11 +185,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 82011.49293764081,
-              "clearance": 0.8917713817362176,
+              "clearance": 0.9076261197151831,
               "reasons": []
             }
           ],
-          "groundGap": 31.921600000000396
+          "groundGap": 31.510000000000403
         }
       ]
     },
@@ -230,9 +230,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -258,17 +258,17 @@
       "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000108,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 3.2000000000000024,
-        "impulseUsed": 59643.68671874986,
-        "remainingImpulse": 65356.313281250186,
-        "remainingAir": 6.800000000000068,
+        "airUsed": 3.199999999999932,
+        "impulseUsed": 59643.69193725453,
+        "remainingImpulse": 65356.30806274519,
+        "remainingAir": 6.800000000000067,
         "backgroundDistance": 8548.553087801673,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -284,9 +284,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -294,24 +294,24 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 8.56,
+          "t": 8.55,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 59644.521679687336,
@@ -324,7 +324,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -340,8 +340,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 8.56,
-            "x": 187.8799999999996,
+            "t": 8.55,
+            "x": 188.09999999999957,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -349,7 +349,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.9426727294921879,
+            "minRoofClearance": 0.8666623309135435,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -358,7 +358,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.4080187500000012,
+              "clearance": 0.3319630032421874,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -368,7 +368,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.2937124963364035,
+              "clearance": 0.2195641477509369,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -378,7 +378,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 0.1875000000000011,
+              "clearance": 0.11555379379290165,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -388,7 +388,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 0.08902734052551353,
+              "clearance": 0.019455419394406537,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -398,7 +398,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": -0.0021610966435168244,
+              "clearance": -0.06927318878173883,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -408,7 +408,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": -0.08656511999999861,
+              "clearance": -0.15119269627199983,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -418,7 +418,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 0.530578341172951,
+              "clearance": 0.4530831256570318,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -428,7 +428,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.6612082761774127,
+              "clearance": 0.582986125578703,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -438,7 +438,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.7991463224817728,
+              "clearance": 0.7212556963967143,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -448,11 +448,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 59644.521679687336,
-              "clearance": 0.9426727294921879,
+              "clearance": 0.8666623309135435,
               "reasons": []
             }
           ],
-          "groundGap": 7.921600000000396
+          "groundGap": 7.510000000000403
         }
       ]
     },
@@ -493,9 +493,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -516,16 +516,16 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.000000000000003,
-        "impulseUsed": 74555.43,
-        "remainingImpulse": 50444.56999999997,
+        "airUsed": 3.9999999999999147,
+        "impulseUsed": 74555.43213749841,
+        "remainingImpulse": 50444.567862501506,
         "remainingAir": 6.000000000000085,
         "backgroundDistance": 8746.553087801673,
         "classification": "Synthetic translational comparison; safety unresolved"
@@ -542,9 +542,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -552,24 +552,24 @@
           "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "approved",
           "message": "emergency: Selected 4.00 s / 3 m apex from 1 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 18.36,
+          "t": 18.35,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 74555.85750000003,
@@ -582,7 +582,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.4799999999986,
+            "x": 315.69999999999857,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -598,8 +598,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.4799999999986,
+            "t": 18.35,
+            "x": 403.69999999999857,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -607,7 +607,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.3087492799999985,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -616,11 +616,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 74555.85750000003,
-              "clearance": 1.3087492799999985,
+              "clearance": 1.3034904188671876,
               "reasons": []
             }
           ],
-          "groundGap": 19.921600000001376
+          "groundGap": 19.510000000001412
         }
       ]
     },
@@ -636,16 +636,16 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.5266666666654,
+        "progress": 347.96666666666584,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.59999999999999,
-        "impulseUsed": 85739.02521574752,
-        "remainingImpulse": 39260.974784252365,
-        "remainingAir": 5.400000000000098,
+        "airUsed": 4.599999999999968,
+        "impulseUsed": 85739.02521574682,
+        "remainingImpulse": 39260.97478425312,
+        "remainingAir": 5.400000000000099,
         "backgroundDistance": 8746.553087801673,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -671,17 +671,17 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
           "type": "comparison",
-          "message": "Current bumper gap 20.36 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
+          "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "denied",
           "message": "emergency: Insufficient impulse after mandatory completion reserve."
         }
@@ -701,7 +701,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 21.56000000000001,
+            "x": 22.00000000000001,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -718,7 +718,7 @@
           ],
           "landing": {
             "t": 5.6,
-            "x": 122.75999999999999,
+            "x": 123.2,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -739,10 +739,10 @@
               "reasons": []
             }
           ],
-          "groundGap": 20.43999999999999
+          "groundGap": 19.99999999999999
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": false,
           "impulse": 74555.85750000003,
@@ -755,7 +755,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.0399999999986,
+            "x": 315.699999999999,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -771,8 +771,8 @@
             "Insufficient impulse after mandatory completion reserve."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.0399999999986,
+            "t": 18.35,
+            "x": 403.699999999999,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -780,7 +780,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.287309629999998,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -789,7 +789,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 1.287309629999998,
+              "clearance": 1.3034904188671876,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -799,7 +799,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 1.3942814814814803,
+              "clearance": 1.405216507107378,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -809,7 +809,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 1.4167835735263994,
+              "clearance": 1.3801598562893669,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -819,7 +819,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 1.3548062821387874,
+              "clearance": 1.3101100293824786,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -829,7 +829,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": 1.2836319589120375,
+              "clearance": 1.2326378314583386,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -839,7 +839,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": 1.2064968929280009,
+              "clearance": 1.1506590018750003,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -849,7 +849,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 1.1292837286392805,
+              "clearance": 1.1513859049481656,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -859,7 +859,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.9093772748056672,
+              "clearance": 0.9379648492869799,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -869,7 +869,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.6167999999999956,
+              "clearance": 0.6521302848235768,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -880,7 +880,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 59644.521679687336,
-              "clearance": 0.2435039794921836,
+              "clearance": 0.28515760831832804,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -891,7 +891,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 55916.662222222236,
-              "clearance": -0.20969163851852368,
+              "clearance": -0.16350924407407508,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -902,7 +902,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 52188.784548104995,
-              "clearance": -0.7197000000000054,
+              "clearance": -0.6734865676085494,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -913,7 +913,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 48460.881110605376,
-              "clearance": -1.2120300829802917,
+              "clearance": -1.1755514331168382,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -924,7 +924,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 44732.940277777816,
-              "clearance": -1.4967219907407412,
+              "clearance": -1.490087238679109,
               "reasons": [
                 "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
                 "Within-flight jerk limit exceeded.",
@@ -933,7 +933,7 @@
               ]
             }
           ],
-          "groundGap": 20.361600000001374
+          "groundGap": 19.510000000000957
         }
       ]
     },
@@ -994,8 +994,8 @@
       "decision": "A screened candidate, not a safety clearance",
       "summary": {
         "policy": "Forecast-assisted transfer",
-        "arrival": 24.48,
-        "progress": 576.3311078030096,
+        "arrival": 24.46,
+        "progress": 576.6741767753714,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -1032,7 +1032,7 @@
           "message": "Exit 17 connector reached at 19.5 m/s; lateral and vertical speeds within touchdown limits. No forward speed reset."
         },
         {
-          "t": 24.48,
+          "t": 24.46,
           "type": "destination",
           "message": "Airport connector destination reached. The modeled road segment ends here."
         }
@@ -1344,9 +1344,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -1367,17 +1367,17 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.399999999999994,
-        "impulseUsed": 82011.17175056352,
-        "remainingImpulse": 42988.82824943672,
-        "remainingAir": 5.600000000000094,
+        "airUsed": 4.399999999999907,
+        "impulseUsed": 82011.17321050314,
+        "remainingImpulse": 42988.8267894972,
+        "remainingAir": 5.600000000000092,
         "backgroundDistance": 8532.274138453417,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -1393,9 +1393,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -1403,24 +1403,24 @@
           "message": "Current bumper gap 31.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 4.40 s / 3 m apex from 3 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 9.76,
+          "t": 9.75,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 82011.49293764081,
@@ -1433,7 +1433,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -1449,8 +1449,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.760000000000002,
-            "x": 214.27999999999963,
+            "t": 9.75,
+            "x": 214.4999999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -1458,7 +1458,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.8917713817362176,
+            "minRoofClearance": 0.9076261197151831,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -1467,7 +1467,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.36472367999999533,
+              "clearance": 0.38642805187499984,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1477,7 +1477,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.6549128850633181,
+              "clearance": 0.6737493960849643,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1487,11 +1487,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 82011.49293764081,
-              "clearance": 0.8917713817362176,
+              "clearance": 0.9076261197151831,
               "reasons": []
             }
           ],
-          "groundGap": 31.921600000000396
+          "groundGap": 31.510000000000403
         }
       ]
     },
@@ -1532,9 +1532,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -1560,17 +1560,17 @@
       "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000108,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 3.2000000000000024,
-        "impulseUsed": 59643.68671874986,
-        "remainingImpulse": 65356.313281250186,
-        "remainingAir": 6.800000000000068,
+        "airUsed": 3.199999999999932,
+        "impulseUsed": 59643.69193725453,
+        "remainingImpulse": 65356.30806274519,
+        "remainingAir": 6.800000000000067,
         "backgroundDistance": 8532.274138453417,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -1586,9 +1586,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -1596,24 +1596,24 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 8.56,
+          "t": 8.55,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 59644.521679687336,
@@ -1626,7 +1626,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -1642,8 +1642,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 8.56,
-            "x": 187.8799999999996,
+            "t": 8.55,
+            "x": 188.09999999999957,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -1651,7 +1651,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.9426727294921879,
+            "minRoofClearance": 0.8666623309135435,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -1660,7 +1660,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.4080187500000012,
+              "clearance": 0.3319630032421874,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1670,7 +1670,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.2937124963364035,
+              "clearance": 0.2195641477509369,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1680,7 +1680,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 0.1875000000000011,
+              "clearance": 0.11555379379290165,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1690,7 +1690,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 0.08902734052551353,
+              "clearance": 0.019455419394406537,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1700,7 +1700,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": -0.0021610966435168244,
+              "clearance": -0.06927318878173883,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1710,7 +1710,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": -0.08656511999999861,
+              "clearance": -0.15119269627199983,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1720,7 +1720,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 0.530578341172951,
+              "clearance": 0.4530831256570318,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1730,7 +1730,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.6612082761774127,
+              "clearance": 0.582986125578703,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1740,7 +1740,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.7991463224817728,
+              "clearance": 0.7212556963967143,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -1750,11 +1750,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 59644.521679687336,
-              "clearance": 0.9426727294921879,
+              "clearance": 0.8666623309135435,
               "reasons": []
             }
           ],
-          "groundGap": 7.921600000000396
+          "groundGap": 7.510000000000403
         }
       ]
     },
@@ -1795,9 +1795,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -1818,16 +1818,16 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.000000000000003,
-        "impulseUsed": 74555.43,
-        "remainingImpulse": 50444.56999999997,
+        "airUsed": 3.9999999999999147,
+        "impulseUsed": 74555.43213749841,
+        "remainingImpulse": 50444.567862501506,
         "remainingAir": 6.000000000000085,
         "backgroundDistance": 8730.274138453417,
         "classification": "Synthetic translational comparison; safety unresolved"
@@ -1844,9 +1844,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -1854,24 +1854,24 @@
           "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "approved",
           "message": "emergency: Selected 4.00 s / 3 m apex from 1 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 18.36,
+          "t": 18.35,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 74555.85750000003,
@@ -1884,7 +1884,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.4799999999986,
+            "x": 315.69999999999857,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -1900,8 +1900,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.4799999999986,
+            "t": 18.35,
+            "x": 403.69999999999857,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -1909,7 +1909,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.3087492799999985,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -1918,11 +1918,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 74555.85750000003,
-              "clearance": 1.3087492799999985,
+              "clearance": 1.3034904188671876,
               "reasons": []
             }
           ],
-          "groundGap": 19.921600000001376
+          "groundGap": 19.510000000001412
         }
       ]
     },
@@ -1938,16 +1938,16 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.5266666666654,
+        "progress": 347.96666666666584,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.59999999999999,
-        "impulseUsed": 85739.02521574752,
-        "remainingImpulse": 39260.974784252365,
-        "remainingAir": 5.400000000000098,
+        "airUsed": 4.599999999999968,
+        "impulseUsed": 85739.02521574682,
+        "remainingImpulse": 39260.97478425312,
+        "remainingAir": 5.400000000000099,
         "backgroundDistance": 8730.274138453417,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -1973,17 +1973,17 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
           "type": "comparison",
-          "message": "Current bumper gap 20.36 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
+          "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "denied",
           "message": "emergency: Insufficient impulse after mandatory completion reserve."
         }
@@ -2003,7 +2003,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 21.56000000000001,
+            "x": 22.00000000000001,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -2020,7 +2020,7 @@
           ],
           "landing": {
             "t": 5.6,
-            "x": 122.75999999999999,
+            "x": 123.2,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -2041,10 +2041,10 @@
               "reasons": []
             }
           ],
-          "groundGap": 20.43999999999999
+          "groundGap": 19.99999999999999
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": false,
           "impulse": 74555.85750000003,
@@ -2057,7 +2057,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.0399999999986,
+            "x": 315.699999999999,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -2073,8 +2073,8 @@
             "Insufficient impulse after mandatory completion reserve."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.0399999999986,
+            "t": 18.35,
+            "x": 403.699999999999,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -2082,7 +2082,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.287309629999998,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -2091,7 +2091,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 1.287309629999998,
+              "clearance": 1.3034904188671876,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2101,7 +2101,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 1.3942814814814803,
+              "clearance": 1.405216507107378,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2111,7 +2111,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 1.4167835735263994,
+              "clearance": 1.3801598562893669,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2121,7 +2121,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 1.3548062821387874,
+              "clearance": 1.3101100293824786,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2131,7 +2131,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": 1.2836319589120375,
+              "clearance": 1.2326378314583386,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2141,7 +2141,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": 1.2064968929280009,
+              "clearance": 1.1506590018750003,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2151,7 +2151,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 1.1292837286392805,
+              "clearance": 1.1513859049481656,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2161,7 +2161,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.9093772748056672,
+              "clearance": 0.9379648492869799,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -2171,7 +2171,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.6167999999999956,
+              "clearance": 0.6521302848235768,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -2182,7 +2182,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 59644.521679687336,
-              "clearance": 0.2435039794921836,
+              "clearance": 0.28515760831832804,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -2193,7 +2193,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 55916.662222222236,
-              "clearance": -0.20969163851852368,
+              "clearance": -0.16350924407407508,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -2204,7 +2204,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 52188.784548104995,
-              "clearance": -0.7197000000000054,
+              "clearance": -0.6734865676085494,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -2215,7 +2215,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 48460.881110605376,
-              "clearance": -1.2120300829802917,
+              "clearance": -1.1755514331168382,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -2226,7 +2226,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 44732.940277777816,
-              "clearance": -1.4967219907407412,
+              "clearance": -1.490087238679109,
               "reasons": [
                 "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
                 "Within-flight jerk limit exceeded.",
@@ -2235,7 +2235,7 @@
               ]
             }
           ],
-          "groundGap": 20.361600000001374
+          "groundGap": 19.510000000000957
         }
       ]
     },
@@ -2296,8 +2296,8 @@
       "decision": "A screened candidate, not a safety clearance",
       "summary": {
         "policy": "Forecast-assisted transfer",
-        "arrival": 24.76,
-        "progress": 568.2865388940229,
+        "arrival": 24.740000000000002,
+        "progress": 568.5449254983322,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -2334,7 +2334,7 @@
           "message": "Exit 17 connector reached at 19.5 m/s; lateral and vertical speeds within touchdown limits. No forward speed reset."
         },
         {
-          "t": 24.76,
+          "t": 24.74,
           "type": "destination",
           "message": "Airport connector destination reached. The modeled road segment ends here."
         }
@@ -2645,9 +2645,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -2668,17 +2668,17 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.399999999999994,
-        "impulseUsed": 82011.17175056352,
-        "remainingImpulse": 42988.82824943672,
-        "remainingAir": 5.600000000000094,
+        "airUsed": 4.399999999999907,
+        "impulseUsed": 82011.17321050314,
+        "remainingImpulse": 42988.8267894972,
+        "remainingAir": 5.600000000000092,
         "backgroundDistance": 8521.289582944475,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -2694,9 +2694,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -2704,24 +2704,24 @@
           "message": "Current bumper gap 31.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 4.40 s / 3 m apex from 3 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 9.76,
+          "t": 9.75,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 82011.49293764081,
@@ -2734,7 +2734,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -2750,8 +2750,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.760000000000002,
-            "x": 214.27999999999963,
+            "t": 9.75,
+            "x": 214.4999999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -2759,7 +2759,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.8917713817362176,
+            "minRoofClearance": 0.9076261197151831,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -2768,7 +2768,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.36472367999999533,
+              "clearance": 0.38642805187499984,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -2778,7 +2778,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.6549128850633181,
+              "clearance": 0.6737493960849643,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -2788,11 +2788,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 82011.49293764081,
-              "clearance": 0.8917713817362176,
+              "clearance": 0.9076261197151831,
               "reasons": []
             }
           ],
-          "groundGap": 31.921600000000396
+          "groundGap": 31.510000000000403
         }
       ]
     },
@@ -2833,9 +2833,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -2861,17 +2861,17 @@
       "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000108,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 3.2000000000000024,
-        "impulseUsed": 59643.68671874986,
-        "remainingImpulse": 65356.313281250186,
-        "remainingAir": 6.800000000000068,
+        "airUsed": 3.199999999999932,
+        "impulseUsed": 59643.69193725453,
+        "remainingImpulse": 65356.30806274519,
+        "remainingAir": 6.800000000000067,
         "backgroundDistance": 8521.289582944475,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -2887,9 +2887,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -2897,24 +2897,24 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 8.56,
+          "t": 8.55,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 59644.521679687336,
@@ -2927,7 +2927,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -2943,8 +2943,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 8.56,
-            "x": 187.8799999999996,
+            "t": 8.55,
+            "x": 188.09999999999957,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -2952,7 +2952,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.9426727294921879,
+            "minRoofClearance": 0.8666623309135435,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -2961,7 +2961,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.4080187500000012,
+              "clearance": 0.3319630032421874,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -2971,7 +2971,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.2937124963364035,
+              "clearance": 0.2195641477509369,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -2981,7 +2981,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 0.1875000000000011,
+              "clearance": 0.11555379379290165,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -2991,7 +2991,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 0.08902734052551353,
+              "clearance": 0.019455419394406537,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3001,7 +3001,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": -0.0021610966435168244,
+              "clearance": -0.06927318878173883,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3011,7 +3011,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": -0.08656511999999861,
+              "clearance": -0.15119269627199983,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3021,7 +3021,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 0.530578341172951,
+              "clearance": 0.4530831256570318,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3031,7 +3031,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.6612082761774127,
+              "clearance": 0.582986125578703,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3041,7 +3041,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.7991463224817728,
+              "clearance": 0.7212556963967143,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -3051,11 +3051,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 59644.521679687336,
-              "clearance": 0.9426727294921879,
+              "clearance": 0.8666623309135435,
               "reasons": []
             }
           ],
-          "groundGap": 7.921600000000396
+          "groundGap": 7.510000000000403
         }
       ]
     },
@@ -3096,9 +3096,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -3119,16 +3119,16 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.000000000000003,
-        "impulseUsed": 74555.43,
-        "remainingImpulse": 50444.56999999997,
+        "airUsed": 3.9999999999999147,
+        "impulseUsed": 74555.43213749841,
+        "remainingImpulse": 50444.567862501506,
         "remainingAir": 6.000000000000085,
         "backgroundDistance": 8719.289582944475,
         "classification": "Synthetic translational comparison; safety unresolved"
@@ -3145,9 +3145,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -3155,24 +3155,24 @@
           "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "approved",
           "message": "emergency: Selected 4.00 s / 3 m apex from 1 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 18.36,
+          "t": 18.35,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 74555.85750000003,
@@ -3185,7 +3185,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.4799999999986,
+            "x": 315.69999999999857,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -3201,8 +3201,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.4799999999986,
+            "t": 18.35,
+            "x": 403.69999999999857,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -3210,7 +3210,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.3087492799999985,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -3219,11 +3219,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 74555.85750000003,
-              "clearance": 1.3087492799999985,
+              "clearance": 1.3034904188671876,
               "reasons": []
             }
           ],
-          "groundGap": 19.921600000001376
+          "groundGap": 19.510000000001412
         }
       ]
     },
@@ -3239,16 +3239,16 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.5266666666654,
+        "progress": 347.96666666666584,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.59999999999999,
-        "impulseUsed": 85739.02521574752,
-        "remainingImpulse": 39260.974784252365,
-        "remainingAir": 5.400000000000098,
+        "airUsed": 4.599999999999968,
+        "impulseUsed": 85739.02521574682,
+        "remainingImpulse": 39260.97478425312,
+        "remainingAir": 5.400000000000099,
         "backgroundDistance": 8719.289582944475,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -3274,17 +3274,17 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
           "type": "comparison",
-          "message": "Current bumper gap 20.36 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
+          "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "denied",
           "message": "emergency: Insufficient impulse after mandatory completion reserve."
         }
@@ -3304,7 +3304,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 21.56000000000001,
+            "x": 22.00000000000001,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -3321,7 +3321,7 @@
           ],
           "landing": {
             "t": 5.6,
-            "x": 122.75999999999999,
+            "x": 123.2,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -3342,10 +3342,10 @@
               "reasons": []
             }
           ],
-          "groundGap": 20.43999999999999
+          "groundGap": 19.99999999999999
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": false,
           "impulse": 74555.85750000003,
@@ -3358,7 +3358,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.0399999999986,
+            "x": 315.699999999999,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -3374,8 +3374,8 @@
             "Insufficient impulse after mandatory completion reserve."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.0399999999986,
+            "t": 18.35,
+            "x": 403.699999999999,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -3383,7 +3383,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.287309629999998,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -3392,7 +3392,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 1.287309629999998,
+              "clearance": 1.3034904188671876,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3402,7 +3402,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 1.3942814814814803,
+              "clearance": 1.405216507107378,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3412,7 +3412,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 1.4167835735263994,
+              "clearance": 1.3801598562893669,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3422,7 +3422,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 1.3548062821387874,
+              "clearance": 1.3101100293824786,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3432,7 +3432,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": 1.2836319589120375,
+              "clearance": 1.2326378314583386,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3442,7 +3442,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": 1.2064968929280009,
+              "clearance": 1.1506590018750003,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3452,7 +3452,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 1.1292837286392805,
+              "clearance": 1.1513859049481656,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3462,7 +3462,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.9093772748056672,
+              "clearance": 0.9379648492869799,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -3472,7 +3472,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.6167999999999956,
+              "clearance": 0.6521302848235768,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -3483,7 +3483,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 59644.521679687336,
-              "clearance": 0.2435039794921836,
+              "clearance": 0.28515760831832804,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -3494,7 +3494,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 55916.662222222236,
-              "clearance": -0.20969163851852368,
+              "clearance": -0.16350924407407508,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -3505,7 +3505,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 52188.784548104995,
-              "clearance": -0.7197000000000054,
+              "clearance": -0.6734865676085494,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -3516,7 +3516,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 48460.881110605376,
-              "clearance": -1.2120300829802917,
+              "clearance": -1.1755514331168382,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -3527,7 +3527,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 44732.940277777816,
-              "clearance": -1.4967219907407412,
+              "clearance": -1.490087238679109,
               "reasons": [
                 "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
                 "Within-flight jerk limit exceeded.",
@@ -3536,7 +3536,7 @@
               ]
             }
           ],
-          "groundGap": 20.361600000001374
+          "groundGap": 19.510000000000957
         }
       ]
     },
@@ -3597,8 +3597,8 @@
       "decision": "A screened candidate, not a safety clearance",
       "summary": {
         "policy": "Forecast-assisted transfer",
-        "arrival": 24.26,
-        "progress": 580.402861615958,
+        "arrival": 24.240000000000002,
+        "progress": 580.7292313871152,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -3635,7 +3635,7 @@
           "message": "Exit 17 connector reached at 20.0 m/s; lateral and vertical speeds within touchdown limits. No forward speed reset."
         },
         {
-          "t": 24.26,
+          "t": 24.24,
           "type": "destination",
           "message": "Airport connector destination reached. The modeled road segment ends here."
         }
@@ -3947,9 +3947,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -3970,17 +3970,17 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.399999999999994,
-        "impulseUsed": 82011.17175056352,
-        "remainingImpulse": 42988.82824943672,
-        "remainingAir": 5.600000000000094,
+        "airUsed": 4.399999999999907,
+        "impulseUsed": 82011.17321050314,
+        "remainingImpulse": 42988.8267894972,
+        "remainingAir": 5.600000000000092,
         "backgroundDistance": 8608.515891812742,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -3996,9 +3996,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -4006,24 +4006,24 @@
           "message": "Current bumper gap 31.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 4.40 s / 3 m apex from 3 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 9.76,
+          "t": 9.75,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 82011.49293764081,
@@ -4036,7 +4036,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -4052,8 +4052,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.760000000000002,
-            "x": 214.27999999999963,
+            "t": 9.75,
+            "x": 214.4999999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -4061,7 +4061,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.8917713817362176,
+            "minRoofClearance": 0.9076261197151831,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -4070,7 +4070,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.36472367999999533,
+              "clearance": 0.38642805187499984,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4080,7 +4080,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.6549128850633181,
+              "clearance": 0.6737493960849643,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4090,11 +4090,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 82011.49293764081,
-              "clearance": 0.8917713817362176,
+              "clearance": 0.9076261197151831,
               "reasons": []
             }
           ],
-          "groundGap": 31.921600000000396
+          "groundGap": 31.510000000000403
         }
       ]
     },
@@ -4135,9 +4135,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -4163,17 +4163,17 @@
       "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000108,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 3.2000000000000024,
-        "impulseUsed": 59643.68671874986,
-        "remainingImpulse": 65356.313281250186,
-        "remainingAir": 6.800000000000068,
+        "airUsed": 3.199999999999932,
+        "impulseUsed": 59643.69193725453,
+        "remainingImpulse": 65356.30806274519,
+        "remainingAir": 6.800000000000067,
         "backgroundDistance": 8608.515891812742,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -4189,9 +4189,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -4199,24 +4199,24 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 8.56,
+          "t": 8.55,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 59644.521679687336,
@@ -4229,7 +4229,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -4245,8 +4245,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 8.56,
-            "x": 187.8799999999996,
+            "t": 8.55,
+            "x": 188.09999999999957,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -4254,7 +4254,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.9426727294921879,
+            "minRoofClearance": 0.8666623309135435,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -4263,7 +4263,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.4080187500000012,
+              "clearance": 0.3319630032421874,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4273,7 +4273,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.2937124963364035,
+              "clearance": 0.2195641477509369,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4283,7 +4283,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 0.1875000000000011,
+              "clearance": 0.11555379379290165,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4293,7 +4293,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 0.08902734052551353,
+              "clearance": 0.019455419394406537,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4303,7 +4303,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": -0.0021610966435168244,
+              "clearance": -0.06927318878173883,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4313,7 +4313,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": -0.08656511999999861,
+              "clearance": -0.15119269627199983,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4323,7 +4323,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 0.530578341172951,
+              "clearance": 0.4530831256570318,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4333,7 +4333,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.6612082761774127,
+              "clearance": 0.582986125578703,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4343,7 +4343,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.7991463224817728,
+              "clearance": 0.7212556963967143,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -4353,11 +4353,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 59644.521679687336,
-              "clearance": 0.9426727294921879,
+              "clearance": 0.8666623309135435,
               "reasons": []
             }
           ],
-          "groundGap": 7.921600000000396
+          "groundGap": 7.510000000000403
         }
       ]
     },
@@ -4398,9 +4398,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -4421,16 +4421,16 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.000000000000003,
-        "impulseUsed": 74555.43,
-        "remainingImpulse": 50444.56999999997,
+        "airUsed": 3.9999999999999147,
+        "impulseUsed": 74555.43213749841,
+        "remainingImpulse": 50444.567862501506,
         "remainingAir": 6.000000000000085,
         "backgroundDistance": 8806.515891812742,
         "classification": "Synthetic translational comparison; safety unresolved"
@@ -4447,9 +4447,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -4457,24 +4457,24 @@
           "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "approved",
           "message": "emergency: Selected 4.00 s / 3 m apex from 1 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 18.36,
+          "t": 18.35,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 74555.85750000003,
@@ -4487,7 +4487,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.4799999999986,
+            "x": 315.69999999999857,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -4503,8 +4503,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.4799999999986,
+            "t": 18.35,
+            "x": 403.69999999999857,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -4512,7 +4512,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.3087492799999985,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -4521,11 +4521,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 74555.85750000003,
-              "clearance": 1.3087492799999985,
+              "clearance": 1.3034904188671876,
               "reasons": []
             }
           ],
-          "groundGap": 19.921600000001376
+          "groundGap": 19.510000000001412
         }
       ]
     },
@@ -4541,16 +4541,16 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.5266666666654,
+        "progress": 347.96666666666584,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.59999999999999,
-        "impulseUsed": 85739.02521574752,
-        "remainingImpulse": 39260.974784252365,
-        "remainingAir": 5.400000000000098,
+        "airUsed": 4.599999999999968,
+        "impulseUsed": 85739.02521574682,
+        "remainingImpulse": 39260.97478425312,
+        "remainingAir": 5.400000000000099,
         "backgroundDistance": 8806.515891812742,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -4576,17 +4576,17 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
           "type": "comparison",
-          "message": "Current bumper gap 20.36 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
+          "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "denied",
           "message": "emergency: Insufficient impulse after mandatory completion reserve."
         }
@@ -4606,7 +4606,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 21.56000000000001,
+            "x": 22.00000000000001,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -4623,7 +4623,7 @@
           ],
           "landing": {
             "t": 5.6,
-            "x": 122.75999999999999,
+            "x": 123.2,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -4644,10 +4644,10 @@
               "reasons": []
             }
           ],
-          "groundGap": 20.43999999999999
+          "groundGap": 19.99999999999999
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": false,
           "impulse": 74555.85750000003,
@@ -4660,7 +4660,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.0399999999986,
+            "x": 315.699999999999,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -4676,8 +4676,8 @@
             "Insufficient impulse after mandatory completion reserve."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.0399999999986,
+            "t": 18.35,
+            "x": 403.699999999999,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -4685,7 +4685,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.287309629999998,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -4694,7 +4694,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 1.287309629999998,
+              "clearance": 1.3034904188671876,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4704,7 +4704,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 1.3942814814814803,
+              "clearance": 1.405216507107378,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4714,7 +4714,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 1.4167835735263994,
+              "clearance": 1.3801598562893669,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4724,7 +4724,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 1.3548062821387874,
+              "clearance": 1.3101100293824786,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4734,7 +4734,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": 1.2836319589120375,
+              "clearance": 1.2326378314583386,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4744,7 +4744,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": 1.2064968929280009,
+              "clearance": 1.1506590018750003,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4754,7 +4754,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 1.1292837286392805,
+              "clearance": 1.1513859049481656,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4764,7 +4764,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.9093772748056672,
+              "clearance": 0.9379648492869799,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -4774,7 +4774,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.6167999999999956,
+              "clearance": 0.6521302848235768,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -4785,7 +4785,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 59644.521679687336,
-              "clearance": 0.2435039794921836,
+              "clearance": 0.28515760831832804,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -4796,7 +4796,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 55916.662222222236,
-              "clearance": -0.20969163851852368,
+              "clearance": -0.16350924407407508,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -4807,7 +4807,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 52188.784548104995,
-              "clearance": -0.7197000000000054,
+              "clearance": -0.6734865676085494,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -4818,7 +4818,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 48460.881110605376,
-              "clearance": -1.2120300829802917,
+              "clearance": -1.1755514331168382,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -4829,7 +4829,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 44732.940277777816,
-              "clearance": -1.4967219907407412,
+              "clearance": -1.490087238679109,
               "reasons": [
                 "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
                 "Within-flight jerk limit exceeded.",
@@ -4838,7 +4838,7 @@
               ]
             }
           ],
-          "groundGap": 20.361600000001374
+          "groundGap": 19.510000000000957
         }
       ]
     },
@@ -4899,8 +4899,8 @@
       "decision": "A screened candidate, not a safety clearance",
       "summary": {
         "policy": "Forecast-assisted transfer",
-        "arrival": 24.740000000000002,
-        "progress": 569.1847195646158,
+        "arrival": 24.72,
+        "progress": 569.4673532256712,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -4937,7 +4937,7 @@
           "message": "Exit 17 connector reached at 19.6 m/s; lateral and vertical speeds within touchdown limits. No forward speed reset."
         },
         {
-          "t": 24.74,
+          "t": 24.72,
           "type": "destination",
           "message": "Airport connector destination reached. The modeled road segment ends here."
         }
@@ -5249,9 +5249,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -5272,17 +5272,17 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.399999999999994,
-        "impulseUsed": 82011.17175056352,
-        "remainingImpulse": 42988.82824943672,
-        "remainingAir": 5.600000000000094,
+        "airUsed": 4.399999999999907,
+        "impulseUsed": 82011.17321050314,
+        "remainingImpulse": 42988.8267894972,
+        "remainingAir": 5.600000000000092,
         "backgroundDistance": 8505.198405790143,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -5298,9 +5298,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -5308,24 +5308,24 @@
           "message": "Current bumper gap 31.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 4.40 s / 3 m apex from 3 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 9.76,
+          "t": 9.75,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 82011.49293764081,
@@ -5338,7 +5338,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -5354,8 +5354,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 9.760000000000002,
-            "x": 214.27999999999963,
+            "t": 9.75,
+            "x": 214.4999999999996,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -5363,7 +5363,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.8917713817362176,
+            "minRoofClearance": 0.9076261197151831,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -5372,7 +5372,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.36472367999999533,
+              "clearance": 0.38642805187499984,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5382,7 +5382,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.6549128850633181,
+              "clearance": 0.6737493960849643,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5392,11 +5392,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 82011.49293764081,
-              "clearance": 0.8917713817362176,
+              "clearance": 0.9076261197151831,
               "reasons": []
             }
           ],
-          "groundGap": 31.921600000000396
+          "groundGap": 31.510000000000403
         }
       ]
     },
@@ -5437,9 +5437,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -5465,17 +5465,17 @@
       "decision": "The flight avoids the contact that braking cannot",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000108,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 3.2000000000000024,
-        "impulseUsed": 59643.68671874986,
-        "remainingImpulse": 65356.313281250186,
-        "remainingAir": 6.800000000000068,
+        "airUsed": 3.199999999999932,
+        "impulseUsed": 59643.69193725453,
+        "remainingImpulse": 65356.30806274519,
+        "remainingAir": 6.800000000000067,
         "backgroundDistance": 8505.198405790143,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -5491,9 +5491,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 5.36,
@@ -5501,24 +5501,24 @@
           "message": "Current bumper gap 7.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering is blocked; it is not an executed branch."
         },
         {
-          "t": 5.36,
+          "t": 5.35,
           "type": "approved",
           "message": "emergency: Selected 3.20 s / 3 m apex from 10 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 8.56,
+          "t": 8.55,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 5.36,
+          "t": 5.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 59644.521679687336,
@@ -5531,7 +5531,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 117.4799999999996,
+            "x": 117.69999999999958,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -5547,8 +5547,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 8.56,
-            "x": 187.8799999999996,
+            "t": 8.55,
+            "x": 188.09999999999957,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -5556,7 +5556,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 0.9426727294921879,
+            "minRoofClearance": 0.8666623309135435,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -5565,7 +5565,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 0.4080187500000012,
+              "clearance": 0.3319630032421874,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5575,7 +5575,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 0.2937124963364035,
+              "clearance": 0.2195641477509369,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5585,7 +5585,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 0.1875000000000011,
+              "clearance": 0.11555379379290165,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5595,7 +5595,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 0.08902734052551353,
+              "clearance": 0.019455419394406537,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5605,7 +5605,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": -0.0021610966435168244,
+              "clearance": -0.06927318878173883,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5615,7 +5615,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": -0.08656511999999861,
+              "clearance": -0.15119269627199983,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5625,7 +5625,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 0.530578341172951,
+              "clearance": 0.4530831256570318,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5635,7 +5635,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.6612082761774127,
+              "clearance": 0.582986125578703,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5645,7 +5645,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.7991463224817728,
+              "clearance": 0.7212556963967143,
               "reasons": [
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
               ]
@@ -5655,11 +5655,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 59644.521679687336,
-              "clearance": 0.9426727294921879,
+              "clearance": 0.8666623309135435,
               "reasons": []
             }
           ],
-          "groundGap": 7.921600000000396
+          "groundGap": 7.510000000000403
         }
       ]
     },
@@ -5700,9 +5700,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -5723,16 +5723,16 @@
       "decision": "Jump feasible in this model; braking also works",
       "summary": {
         "policy": "Request aerial assistance",
-        "arrival": 22.76,
-        "progress": 615.5600000000104,
+        "arrival": 22.740000000000002,
+        "progress": 616.0000000000109,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.000000000000003,
-        "impulseUsed": 74555.43,
-        "remainingImpulse": 50444.56999999997,
+        "airUsed": 3.9999999999999147,
+        "impulseUsed": 74555.43213749841,
+        "remainingImpulse": 50444.567862501506,
         "remainingAir": 6.000000000000085,
         "backgroundDistance": 8703.198405790143,
         "classification": "Synthetic translational comparison; safety unresolved"
@@ -5749,9 +5749,9 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
@@ -5759,24 +5759,24 @@
           "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "approved",
           "message": "emergency: Selected 4.00 s / 3 m apex from 1 candidate(s). Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
         },
         {
-          "t": 18.36,
+          "t": 18.35,
           "type": "landed",
           "message": "Nominal vertical touchdown reached; forward speed is continuous."
         },
         {
-          "t": 22.76,
+          "t": 22.74,
           "type": "destination",
           "message": "Local x=500 m destination reached."
         }
       ],
       "requests": [
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": true,
           "impulse": 74555.85750000003,
@@ -5789,7 +5789,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.4799999999986,
+            "x": 315.69999999999857,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -5805,8 +5805,8 @@
             "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.4799999999986,
+            "t": 18.35,
+            "x": 403.69999999999857,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -5814,7 +5814,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.3087492799999985,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -5823,11 +5823,11 @@
               "apex": 3,
               "accepted": true,
               "impulse": 74555.85750000003,
-              "clearance": 1.3087492799999985,
+              "clearance": 1.3034904188671876,
               "reasons": []
             }
           ],
-          "groundGap": 19.921600000001376
+          "groundGap": 19.510000000001412
         }
       ]
     },
@@ -5843,16 +5843,16 @@
       "summary": {
         "policy": "Use now, then face emergency",
         "arrival": null,
-        "progress": 347.5266666666654,
+        "progress": 347.96666666666584,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 1,
         "hardBrakes": 2,
         "overlaps": 0,
-        "airUsed": 4.59999999999999,
-        "impulseUsed": 85739.02521574752,
-        "remainingImpulse": 39260.974784252365,
-        "remainingAir": 5.400000000000098,
+        "airUsed": 4.599999999999968,
+        "impulseUsed": 85739.02521574682,
+        "remainingImpulse": 39260.97478425312,
+        "remainingAir": 5.400000000000099,
         "backgroundDistance": 8703.198405790143,
         "classification": "Synthetic translational comparison; safety unresolved"
       },
@@ -5878,17 +5878,17 @@
           "message": "Lead vehicle begins 8 m/s² braking; no instantaneous stopped-car insertion."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "disturbance",
-          "message": "Braking is observed after 0.35 s configured response latency (quantized to physics steps)."
+          "message": "Braking is observed after the 0.35 s configured response latency."
         },
         {
           "t": 14.36,
           "type": "comparison",
-          "message": "Current bumper gap 20.36 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
+          "message": "Current bumper gap 19.92 m. Ego stop distance after response 32.27 m; lead remaining stop distance 22.85 m. Three-second steering passes a corridor screen; it is not an executed branch."
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "type": "denied",
           "message": "emergency: Insufficient impulse after mandatory completion reserve."
         }
@@ -5908,7 +5908,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 21.56000000000001,
+            "x": 22.00000000000001,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -5925,7 +5925,7 @@
           ],
           "landing": {
             "t": 5.6,
-            "x": 122.75999999999999,
+            "x": 123.2,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -5946,10 +5946,10 @@
               "reasons": []
             }
           ],
-          "groundGap": 20.43999999999999
+          "groundGap": 19.99999999999999
         },
         {
-          "t": 14.36,
+          "t": 14.35,
           "kind": "emergency",
           "accepted": false,
           "impulse": 74555.85750000003,
@@ -5962,7 +5962,7 @@
           },
           "origin": {
             "id": "R",
-            "x": 315.0399999999986,
+            "x": 315.699999999999,
             "y": 3.7,
             "z": 0,
             "v": 22,
@@ -5978,8 +5978,8 @@
             "Insufficient impulse after mandatory completion reserve."
           ],
           "landing": {
-            "t": 18.36,
-            "x": 403.0399999999986,
+            "t": 18.35,
+            "x": 403.699999999999,
             "y": 3.7,
             "uncertainty": 7.699999999999999
           },
@@ -5987,7 +5987,7 @@
             "ok": true,
             "reason": "Script-conditioned lead forecast clears the flight and landing recovery corridor; uncertainty is not modeled.",
             "requiredClearance": 0.7,
-            "minRoofClearance": 1.287309629999998,
+            "minRoofClearance": 1.3034904188671876,
             "firstConflict": null
           },
           "candidateSearch": [
@@ -5996,7 +5996,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 74555.85750000003,
-              "clearance": 1.287309629999998,
+              "clearance": 1.3034904188671876,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6006,7 +6006,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 78283.67690314224,
-              "clearance": 1.3942814814814803,
+              "clearance": 1.405216507107378,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6016,7 +6016,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 82011.49293764081,
-              "clearance": 1.4167835735263994,
+              "clearance": 1.3801598562893669,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6026,7 +6026,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 85739.30630393687,
-              "clearance": 1.3548062821387874,
+              "clearance": 1.3101100293824786,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6036,7 +6036,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 89467.11753472209,
-              "clearance": 1.2836319589120375,
+              "clearance": 1.2326378314583386,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6046,7 +6046,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 93194.92703999995,
-              "clearance": 1.2064968929280009,
+              "clearance": 1.1506590018750003,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6056,7 +6056,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 70828.03379501383,
-              "clearance": 1.1292837286392805,
+              "clearance": 1.1513859049481656,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6066,7 +6066,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 67100.20452674893,
-              "clearance": 0.9093772748056672,
+              "clearance": 0.9379648492869799,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve."
               ]
@@ -6076,7 +6076,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 63372.36796254837,
-              "clearance": 0.6167999999999956,
+              "clearance": 0.6521302848235768,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -6087,7 +6087,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 59644.521679687336,
-              "clearance": 0.2435039794921836,
+              "clearance": 0.28515760831832804,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -6098,7 +6098,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 55916.662222222236,
-              "clearance": -0.20969163851852368,
+              "clearance": -0.16350924407407508,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -6109,7 +6109,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 52188.784548104995,
-              "clearance": -0.7197000000000054,
+              "clearance": -0.6734865676085494,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -6120,7 +6120,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 48460.881110605376,
-              "clearance": -1.2120300829802917,
+              "clearance": -1.1755514331168382,
               "reasons": [
                 "Insufficient impulse after mandatory completion reserve.",
                 "Lead vehicle occupies the climb, flight or 0.6 s recovery corridor (0.70 m clearance buffer)."
@@ -6131,7 +6131,7 @@
               "apex": 3,
               "accepted": false,
               "impulse": 44732.940277777816,
-              "clearance": -1.4967219907407412,
+              "clearance": -1.490087238679109,
               "reasons": [
                 "Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).",
                 "Within-flight jerk limit exceeded.",
@@ -6140,7 +6140,7 @@
               ]
             }
           ],
-          "groundGap": 20.361600000001374
+          "groundGap": 19.510000000000957
         }
       ]
     },
@@ -6201,8 +6201,8 @@
       "decision": "A screened candidate, not a safety clearance",
       "summary": {
         "policy": "Forecast-assisted transfer",
-        "arrival": 24.82,
-        "progress": 567.0814925795015,
+        "arrival": 24.8,
+        "progress": 567.3460291499732,
         "failed": false,
         "recoveryFailures": 0,
         "denials": 0,
@@ -6239,7 +6239,7 @@
           "message": "Exit 17 connector reached at 19.6 m/s; lateral and vertical speeds within touchdown limits. No forward speed reset."
         },
         {
-          "t": 24.82,
+          "t": 24.8,
           "type": "destination",
           "message": "Airport connector destination reached. The modeled road segment ends here."
         }

@@ -15,6 +15,11 @@ export function feasibility(request={}, config=DEFAULT, ledger=resources(config)
     if(f>cap||fz<0||fz>c.verticalThrust||Math.abs(fy)>c.lateralThrust)forceOK=false;
     samples.push({t,x:q.speed*t,y:y.p,z:z.p,force:f});
   }
+  // Midpoint samples miss the endpoints, where this profile's force peaks; evaluate them exactly.
+  for(const [te,spent] of [[0,0],[q.duration,impulse]]){const z=vertical(te,q.duration,q.height),y=requestLateral(te,q),fz=c.mass*(z.a+c.gravity),fy=c.mass*y.a,f=Math.hypot(fz,fy);peak=Math.max(peak,f);peakVertical=Math.max(peakVertical,fz);peakLateral=Math.max(peakLateral,Math.abs(fy));peakLoad=Math.max(peakLoad,f/c.mass/c.gravity);if(f>thrustCap(c,{impulse:Math.max(0,ledger.impulse-spent-c.reserve)})||fz<0||fz>c.verticalThrust||Math.abs(fy)>c.lateralThrust)forceOK=false;}
+  {const e=1e-4,acc=t=>{const z=vertical(t,q.duration,q.height),y=requestLateral(t,q);return [z.a,y.a];},j=(a,b)=>Math.hypot(b[0]-a[0],b[1]-a[1])/e;peakJerk=Math.max(peakJerk,j(acc(0),acc(e)),j(acc(q.duration-e),acc(q.duration)));}
+  // Within-flight jerk only: the profile starts and ends with a nonzero vertical acceleration, so joining it to ground travel is an acceleration step.
+  const transitionStep=Math.max(Math.hypot(vertical(0,q.duration,q.height).a,requestLateral(0,q).a),Math.hypot(vertical(q.duration,q.duration,q.height).a,requestLateral(q.duration,q).a));
   if(!forceOK)reasons.push('Shared thrust / directional allocation exceeded (including bounded end-of-maneuver derating).');
   if(peakLoad>c.maxLoad)reasons.push('Occupant specific-force limit exceeded.');
   if(peakJerk>c.maxJerk)reasons.push('Within-flight jerk limit exceeded.');
@@ -22,7 +27,7 @@ export function feasibility(request={}, config=DEFAULT, ledger=resources(config)
   if(impulse+c.reserve>ledger.impulse+1e-8)reasons.push('Insufficient impulse after mandatory completion reserve.');
   if(ledger.refillStart!==null)reasons.push('Vehicle unavailable during refill.');
   const touchdown=vertical(q.duration,q.duration,q.height);
-  return {ok:reasons.length===0,reasons:reasons.length?reasons:['Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required.'],request:q,impulse,gas:impulse/c.exhaustVelocity,reserve:c.reserve,peak,peakVertical,peakLateral,peakLoad,peakJerk,distance:q.speed*q.duration,landingTime:q.duration,verticalTouchdown:touchdown.v,groundStoppingDistance:stoppingDistance(q.speed,c.latency,c.brake),samples};
+  return {ok:reasons.length===0,reasons:reasons.length?reasons:['Point-mass force, impulse, duration and nominal touchdown checks pass; traffic gate still required.'],request:q,impulse,gas:impulse/c.exhaustVelocity,reserve:c.reserve,peak,peakVertical,peakLateral,peakLoad,peakJerk,transitionStep,distance:q.speed*q.duration,landingTime:q.duration,verticalTouchdown:touchdown.v,groundStoppingDistance:stoppingDistance(q.speed,c.latency,c.brake),samples};
 }
 // Swept occupied boxes over each physics step. Returns conservative overlap including buffer.
 export function sweptOverlap(a0,a1,b0,b1,c=DEFAULT,buffer=c.buffer) {

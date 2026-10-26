@@ -20,7 +20,7 @@ export function sweepRow(gap,config={},seed=42,speed=22){
  const groundContact=g.summary.failed,margin=g.study.groundStopMargin;
  const cls=groundContact?(approved&&!aerialFailed?'rescue':'unavoidable'):(approved?(aerialFailed?'anomaly':'unneeded'):'braking');
  return {gap,margin,groundContact,approved,aerialFailed,cls,thin:!groundContact&&margin<2,
-  duration:approved?req.duration:null,impulse:approved?req.impulse:null,peakLoad:approved?req.screen.peakLoad:null,jerk:approved?req.screen.peakJerk:null,
+  duration:approved?req.duration:null,impulse:approved?req.impulse:null,peakLoad:approved?req.screen.peakLoad:null,transitionStep:approved?req.screen.transitionStep:null,jerk:approved?req.screen.peakJerk:null,
   clearance:approved?req.trafficScreen.minRoofClearance:null,remaining:a.summary.remainingImpulse,
   reason:approved?null:(req?.reasons?.[0]??'No request')};
 }

@@ -1,3 +1,9 @@
+# Verification record · October 26, 2026
+
+## Version 0.10 update (external audit)
+
+77 automated checks pass, including four regression tests for the audit: the flight is screened from the car's exact position at the 5.35 s decision instant; selected duration, clearance, outcome and impulse are identical at 20, 10 and 5 ms; the reported roof clearance agrees with an independent 0.1 ms continuous-geometry check within 5 mm (0.867 m); and screened peaks equal the analytic endpoint values (1.956 g, 36.45 kN, 17.58 m/s³ within-flight jerk, 9.375 m/s² transition step). Gap sweeps at 49 and 60 mph give identical bands at 20 and 10 ms with no flight-causes-contact anomaly and no replay/formula disagreement. The braking arithmetic was independently confirmed by the audit.
+
 # Verification record · October 22, 2026
 
 ## Version 0.9 update

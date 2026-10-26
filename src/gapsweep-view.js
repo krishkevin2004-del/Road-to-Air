@@ -23,7 +23,7 @@ function chart(rows,edge,selected,speed){
 }
 function detail(r){
  const ground=r.groundContact?`Braking alone: stopping margin ${f(r.margin)} m, so contact is recorded.`:`Braking alone: stopping margin ${f(r.margin)} m, no contact${r.thin?' (a thin margin)':''}.`;
- const air=r.approved?`Aerial request: ${r.aerialFailed?'admitted, but the replay records contact. ':'admitted. '}A ${f(r.duration)} s, 3 m climb using ${kn(r.impulse)} kN·s plus the completion reserve; peak ${f(r.peakLoad,2)} g and ${f(r.jerk)} m/s³ jerk; ${f(r.clearance,2)} m roof clearance; ${kn(r.remaining)} kN·s left afterwards.`:`Aerial request: declined. ${r.reason}`;
+ const air=r.approved?`Aerial request: ${r.aerialFailed?'admitted, but the replay records contact. ':'admitted. '}A ${f(r.duration)} s, 3 m climb using ${kn(r.impulse)} kN·s plus the completion reserve; peak ${f(r.peakLoad,2)} g and ${f(r.jerk)} m/s³ within-flight jerk; ${f(r.clearance,2)} m roof clearance; ${kn(r.remaining)} kN·s left afterwards.`:`Aerial request: declined. ${r.reason}`;
  return `<b>${f(r.gap)} m gap · ${CLASSES[r.cls].label}</b><span>${ground}</span><span>${air}</span>`;
 }
 function table(rows){return `<table><thead><tr><th>Gap (m)</th><th>Braking margin (m)</th><th>Braking</th><th>Aerial request</th><th>Duration (s)</th><th>Impulse (kN·s)</th><th>Peak load (g)</th><th>Roof clearance (m)</th><th>Outcome</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${f(r.gap)}</td><td>${f(r.margin)}</td><td>${r.groundContact?'Contact':'No contact'}</td><td>${flightCell(r)}</td><td>${r.approved?f(r.duration):'—'}</td><td>${r.approved?kn(r.impulse):'—'}</td><td>${r.approved?f(r.peakLoad,2):'—'}</td><td>${r.approved?f(r.clearance,2):'—'}</td><td>${CLASSES[r.cls].short}</td></tr>`).join('')}</tbody></table>`;}
